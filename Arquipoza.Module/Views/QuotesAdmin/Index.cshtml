@@ -1,0 +1,40 @@
+@model IEnumerable<Arquipoza.Module.Models.QuoteRequest>
+
+<h1>Quote Requests</h1>
+
+@if (!Model.Any())
+{
+    <p class="alert alert-info">No quote requests yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Type</th>
+                <th>Budget</th>
+                <th>Timeline</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var quote in Model)
+            {
+                <tr>
+                    <td>@quote.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@quote.Name</td>
+                    <td><a href="mailto:@quote.Email">@quote.Email</a></td>
+                    <td>@quote.Phone</td>
+                    <td>@quote.ProjectType</td>
+                    <td>@quote.Budget</td>
+                    <td>@quote.Timeline</td>
+                    <td>@quote.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

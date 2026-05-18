@@ -1,0 +1,30 @@
+@model Arquipoza.Module.ViewModels.ProjectPartViewModel
+
+<div class="project-part">
+    <div class="project-meta">
+        @if (!string.IsNullOrEmpty(Model.ClientName))
+        {
+            <p><strong>Cliente:</strong> @Model.ClientName</p>
+        }
+        @if (!string.IsNullOrEmpty(Model.Location))
+        {
+            <p><strong>Ubicación:</strong> @Model.Location</p>
+        }
+        @if (Model.Year > 0)
+        {
+            <p><strong>Año:</strong> @Model.Year</p>
+        }
+        @if (!string.IsNullOrEmpty(Model.ProjectType))
+        {
+            <p><strong>Tipo:</strong> @Model.ProjectType</p>
+        }
+        @if (!string.IsNullOrEmpty(Model.Surface))
+        {
+            <p><strong>Superficie:</strong> @Model.Surface</p>
+        }
+        @if (Model.IsFeatured)
+        {
+            <span class="badge bg-warning text-dark">Proyecto Destacado</span>
+        }
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Arquipoza.Module/Arquipoza.Module.csproj" />
+  <Project Path="Arquipoza.Theme/Arquipoza.Theme.csproj" />
+  <Project Path="Arquipoza.Web/Arquipoza.Web.csproj" />
+</Solution>

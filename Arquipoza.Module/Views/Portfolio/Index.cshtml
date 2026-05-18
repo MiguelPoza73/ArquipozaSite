@@ -1,0 +1,235 @@
+@using OrchardCore.ContentManagement
+@using Arquipoza.Module.Models
+@model IEnumerable<OrchardCore.ContentManagement.ContentItem>
+
+<div class="container my-5">
+    <h1 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 4px; font-weight: 300; text-transform: uppercase; border-bottom: 1px solid var(--color-secondary); padding-bottom: 1rem;">
+        Our Portfolio
+    </h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 2px; margin-top: 1rem;">
+        A selection of our most significant architectural projects.
+        @ViewBag.TotalProjects project(s) found.
+    </p>
+
+    <!-- Search and Filter -->
+    <div class="row mt-4 mb-5">
+        <div class="col-md-6">
+            <form method="get" action="/Arquipoza.Module/Portfolio/Index">
+                <div style="display: flex; gap: 0;">
+                    <input name="search" value="@ViewBag.CurrentSearch" type="text" placeholder="Search by location or client..."
+                           style="flex: 1; background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); padding: 0.6rem 1rem; font-size: 0.8rem; border-radius: 0;" />
+                    <input type="hidden" name="type" value="@ViewBag.CurrentType" />
+                    <button type="submit" style="background: var(--color-secondary); border: none; color: var(--color-primary); padding: 0.6rem 1.5rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer;">
+                        Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;">
+                <a href="/Arquipoza.Module/Portfolio/Index"
+                   style="padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid @(string.IsNullOrEmpty(ViewBag.CurrentType as string) ? "var(--color-secondary)" : "rgba(184,150,110,0.3)"); color: @(string.IsNullOrEmpty(ViewBag.CurrentType as string) ? "var(--color-secondary)" : "rgba(255,255,255,0.5)");">
+                    All
+                </a>
+                @foreach (var t in new[] { "Residential", "Commercial", "Cultural", "Industrial", "Urban" })
+                {
+                    <a href="/Arquipoza.Module/Portfolio/Index?type=@t"
+                       style="padding: 0.5rem 1rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 1px solid @(ViewBag.CurrentType == t ? "var(--color-secondary)" : "rgba(184,150,110,0.3)"); color: @(ViewBag.CurrentType == t ? "var(--color-secondary)" : "rgba(255,255,255,0.5)");">
+                        @t
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            var part = item.As<ProjectPart>();
+            <div class="col-md-4 mb-5">
+                <a href="/Arquipoza.Module/Portfolio/Detail/@item.ContentItemId" style="text-decoration: none;">
+                    <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
+                         onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
+                         onmouseout="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1)')">
+                        @if (!string.IsNullOrEmpty(part.ImageUrl))
+                        {
+                            <img src="@part.ImageUrl" alt="@item.DisplayText" style="width: 100%; height: 250px; object-fit: cover; opacity: 0.85; transition: transform 0.4s ease;" />
+                        }
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 2px; font-weight: 300; font-size: 1.4rem; margin-bottom: 1rem;">
+                                @item.DisplayText
+                            </h3>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Location</span> — @part.Location
+                            </p>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Year</span> — @part.Year
+                            </p>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Type</span> — @part.ProjectType
+                            </p>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Surface</span> — @part.Surface
+                            </p>
+                            @if (part.IsFeatured)
+                            {
+                                <span class="badge bg-warning mt-2">Featured</span>
+                            }
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    @if (ViewBag.TotalPages > 1)
+    {
+        <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem;">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <a href="/Arquipoza.Module/Portfolio/Index?page=@i&type=@ViewBag.CurrentType&search=@ViewBag.CurrentSearch"
+                   style="padding: 0.5rem 1rem; font-size: 0.75rem; letter-spacing: 2px; text-decoration: none; border: 1px solid @(ViewBag.CurrentPage == i ? "var(--color-secondary)" : "rgba(184,150,110,0.3)"); color: @(ViewBag.CurrentPage == i ? "var(--color-secondary)" : "rgba(255,255,255,0.5)");">
+                    @i
+                </a>
+            }
+        </div>
+    }
+    <!-- Live Project Section -->
+    <div style="margin-top:5rem; border-top:1px solid rgba(184,150,110,0.3); padding-top:4rem;">
+        <p style="color:#b8966e; font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; margin-bottom:0.5rem;">Currently On Site</p>
+        <h2 style="font-family:'Cormorant Garamond',serif; color:#fff; font-size:3rem; font-weight:300; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.5rem;">Current Project</h2>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; letter-spacing:2px; margin-bottom:1rem;">Traditional Stone House Restoration — Castilla y León, Spain</p>
+
+        <!-- Progress Bar -->
+        <div style="max-width:400px; margin-bottom:3rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">Progress</span>
+                <span id="progressPercent" style="color:#b8966e; font-size:0.7rem; letter-spacing:2px;">0%</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.1); height:2px;">
+                <div style="background:#b8966e; height:2px; width:0%; transition:width 1.5s ease;" id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div style="position:relative;">
+            @{
+                var phases = new[]
+                {
+                        new { img = "obra1.jpeg", phase = "Phase 1", desc = "Initial state & demolition" },
+                        new { img = "obra2.jpeg", phase = "Phase 2", desc = "Exterior structure with machinery" },
+                        new { img = "obra3.jpeg", phase = "Phase 3", desc = "Metal structure & roof" },
+                        new { img = "obra4.jpeg", phase = "Phase 4", desc = "Interior wooden roof detail" },
+                        new { img = "obra5.jpeg", phase = "Phase 5", desc = "Enclosure works" },
+                        new { img = "obra6.jpeg", phase = "Phase 6", desc = "Advanced exterior phase" },
+                        new { img = "obra7.jpeg", phase = "Phase 7", desc = "Near final result" }
+                        };
+            }
+
+            <!-- Main Carousel -->
+            <div style="position:relative; overflow:hidden; margin-bottom:1.5rem;">
+                <div id="obraCarousel" style="display:flex; transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);">
+                    @foreach (var phase in phases)
+                    {
+                        <div style="min-width:100%; position:relative;">
+                            <img src="/media/@phase.img" alt="@phase.phase"
+                                 style="width:100%; height:550px; object-fit:cover;" />
+                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
+                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">@phase.phase</p>
+                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">@phase.desc</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <!-- Prev/Next -->
+                <button onclick="obraSlide(-1)" style="position:absolute; left:1.5rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:50px; height:50px; font-size:1.5rem; cursor:pointer; z-index:10; transition:all 0.3s ease;"
+                        onmouseover="this.style.background='rgba(184,150,110,0.3)'"
+                        onmouseout="this.style.background='rgba(0,0,0,0.6)'">
+                    ‹
+                </button>
+                <button onclick="obraSlide(1)" style="position:absolute; right:1.5rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:50px; height:50px; font-size:1.5rem; cursor:pointer; z-index:10; transition:all 0.3s ease;"
+                        onmouseover="this.style.background='rgba(184,150,110,0.3)'"
+                        onmouseout="this.style.background='rgba(0,0,0,0.6)'">
+                    ›
+                </button>
+
+                <!-- Counter -->
+                <div style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.3); padding:0.4rem 1rem;">
+                    <span id="obraCounter" style="color:#b8966e; font-size:0.75rem; letter-spacing:2px;">1 / 7</span>
+                </div>
+            </div>
+
+            <!-- Thumbnail Strip -->
+            <div style="display:flex; gap:0.5rem; overflow-x:auto; padding-bottom:0.5rem;">
+                @for (int i = 0; i < phases.Length; i++)
+                {
+                    <div onclick="obraGoTo(@i)" id="obraThumb-@i"
+                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:@(i == 0 ? "2px solid #b8966e" : "2px solid transparent"); transition:all 0.3s ease;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
+                        <img src="/media/@phases[i].img" alt="@phases[i].phase"
+                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
+                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
+                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">@phases[i].phase</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.97); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
+            <img id="lightboxImg" src="" style="max-width:90%; max-height:80vh; object-fit:contain;" />
+            <p id="lightboxCaption" style="color:#b8966e; font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; margin-top:1.5rem;"></p>
+            <button onclick="closeLightbox()" style="position:absolute; top:2rem; right:2rem; background:transparent; border:1px solid #b8966e; color:#b8966e; padding:0.5rem 1rem; cursor:pointer; font-size:0.75rem; letter-spacing:2px;">CLOSE ✕</button>
+        </div>
+
+        <script>
+                        // Progress bar
+            const obraProgress = [0, 15, 30, 45, 60, 80, 95];
+
+            window.addEventListener('load', function() {
+                setTimeout(() => { document.getElementById('progressBar').style.width = '0%'; }, 500);
+            });
+
+            // Obra Carousel
+            let obraCurrent = 0;
+            const obraTotal = 7;
+            const obraPhases = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'Phase 6', 'Phase 7'];
+            const obraImgs = ['/media/obra1.jpeg','/media/obra2.jpeg','/media/obra3.jpeg','/media/obra4.jpeg','/media/obra5.jpeg','/media/obra6.jpeg','/media/obra7.jpeg'];
+
+            function obraGoTo(n) {
+                document.getElementById('obraThumb-' + obraCurrent).style.border = '2px solid transparent';
+                obraCurrent = (n + obraTotal) % obraTotal;
+                document.getElementById('obraCarousel').style.transform = 'translateX(-' + (obraCurrent * 100) + '%)';
+                document.getElementById('obraCounter').textContent = (obraCurrent + 1) + ' / ' + obraTotal;
+                document.getElementById('obraThumb-' + obraCurrent).style.border = '2px solid #b8966e';
+                document.getElementById('progressBar').style.width = obraProgress[obraCurrent] + '%';
+                document.getElementById('progressPercent').textContent = obraProgress[obraCurrent] + '%';
+            }
+
+            function obraSlide(dir) { obraGoTo(obraCurrent + dir); }
+
+            // Lightbox
+            function openLightbox(src, caption) {
+                document.getElementById('lightboxImg').src = src;
+                document.getElementById('lightboxCaption').textContent = caption;
+                document.getElementById('lightbox').style.display = 'flex';
+            }
+
+            function closeLightbox() {
+                document.getElementById('lightbox').style.display = 'none';
+            }
+
+            document.getElementById('obraCarousel').addEventListener('click', function() {
+                openLightbox(obraImgs[obraCurrent], obraPhases[obraCurrent]);
+            });            
+            // Click on main image opens lightbox
+            document.getElementById('obraCarousel').addEventListener('click', function() {
+                openLightbox(obraImgs[obraCurrent], obraPhases[obraCurrent]);
+            });
+        </script>
+</div>

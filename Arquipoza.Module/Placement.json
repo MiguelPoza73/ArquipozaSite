@@ -1,0 +1,17 @@
+{
+  "ProjectPart": [
+    {
+      "place": "Content:5"
+    }
+  ],
+  "ProjectPart_Edit": [
+    {
+      "place": "Content:5"
+    }
+  ],
+  "FeaturedProjectsWidget": [
+    {
+      "place": "Content:1"
+    }
+  ]
+}

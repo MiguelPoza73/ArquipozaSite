@@ -1,0 +1,206 @@
+/* ===== ARQUIPOZA THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+    --color-primary: #0f0f0f;
+    --color-secondary: #b8966e;
+    --color-background: #fafafa;
+    --color-text: #2c2c2c;
+    --color-light: #ffffff;
+    --color-gray: #f0f0f0;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: var(--color-primary) !important;
+    padding: 1.8rem 3rem;
+    border-bottom: 1px solid rgba(184,150,110,0.3);
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-light) !important;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 1.2rem;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: var(--color-secondary) !important;
+    }
+
+/* ===== HERO ===== */
+.hero-section {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 10rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .hero-section h1 {
+        font-family: var(--font-heading);
+        font-size: 5rem;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+    }
+
+    .hero-section p {
+        font-size: 0.85rem;
+        color: var(--color-secondary);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+
+/* ===== SECTIONS ===== */
+.container.my-5 h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-secondary);
+}
+
+.container.my-5 p {
+    font-size: 0.9rem;
+    line-height: 2;
+    color: #555;
+    max-width: 700px;
+}
+
+/* ===== PROJECT PART ===== */
+.project-part {
+    padding: 2rem;
+    border-left: 2px solid var(--color-secondary);
+    margin: 1.5rem 0;
+    background: var(--color-light);
+}
+
+    .project-part p {
+        margin-bottom: 0.6rem;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .project-part strong {
+        color: var(--color-primary);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(184,150,110,0.3);
+    margin-top: 0 !important;
+}
+
+/* ===== FEATURED WIDGET ===== */
+.featured-projects-widget {
+    background: var(--color-gray);
+    padding: 5rem 2rem;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+    .featured-projects-widget h2 {
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+
+    .featured-projects-widget p {
+        color: #888;
+        font-size: 0.85rem;
+        letter-spacing: 2px;
+    }
+
+/* ===== BADGE ===== */
+.badge.bg-warning {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+}
+
+/* ===== PAGE TITLE ===== */
+h1.page-title {
+    font-family: var(--font-heading);
+}
+
+/* ===== MAIN ===== */
+
+main {
+    background-color: var(--color-primary);
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+article.content-item.page {
+    background-color: var(--color-primary);
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.widget-container {
+    background-color: var(--color-primary);
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+
+main {
+    flex: 1 !important;
+}

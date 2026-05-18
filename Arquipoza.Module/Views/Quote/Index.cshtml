@@ -1,0 +1,80 @@
+<div class="container my-5">
+    <h1 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 4px; font-weight: 300; text-transform: uppercase; border-bottom: 1px solid var(--color-secondary); padding-bottom: 1rem;">
+        Request a Quote
+    </h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 2px; margin-top: 1rem; margin-bottom: 3rem;">
+        Tell us about your project and we will get back to you within 48 hours.
+    </p>
+
+    @if (TempData["Success"] != null)
+    {
+        <div style="background: rgba(184,150,110,0.2); border-left: 3px solid var(--color-secondary); padding: 1rem 1.5rem; margin-bottom: 2rem; color: var(--color-light);">
+            @TempData["Success"]
+        </div>
+    }
+
+    <form method="post" action="/Arquipoza.Module/Quote/Submit" style="max-width: 700px;">
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Name</label>
+                <input name="name" type="text" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" required />
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Email</label>
+                <input name="email" type="email" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Phone</label>
+                <input name="phone" type="tel" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" />
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Project Type</label>
+                <select name="projectType" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select type...</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Urban">Urban Planning</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Budget (€)</label>
+                <select name="budget" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select budget...</option>
+                    <option value="50k-100k">50.000 - 100.000 €</option>
+                    <option value="100k-250k">100.000 - 250.000 €</option>
+                    <option value="250k-500k">250.000 - 500.000 €</option>
+                    <option value="500k+">500.000 € +</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Timeline</label>
+                <select name="timeline" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select timeline...</option>
+                    <option value="3-6months">3 - 6 months</option>
+                    <option value="6-12months">6 - 12 months</option>
+                    <option value="1-2years">1 - 2 years</option>
+                    <option value="2years+">2+ years</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Project Description</label>
+            <textarea name="description" rows="6" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0; resize: none;" placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <button type="submit" style="background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary); padding: 0.8rem 3rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; cursor: pointer;">
+            Submit Request
+        </button>
+    </form>
+</div>

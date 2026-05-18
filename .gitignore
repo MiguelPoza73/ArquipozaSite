@@ -1,0 +1,7 @@
+.vs/
+bin/
+obj/
+App_Data/
+*.user
+*.suo
+Arquipoza.Web/Localization/

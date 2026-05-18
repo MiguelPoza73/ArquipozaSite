@@ -1,0 +1,32 @@
+@model IEnumerable<Arquipoza.Module.Models.ContactMessage>
+
+<h1>Contact Messages</h1>
+
+@if (!Model.Any())
+{
+    <p class="alert alert-info">No messages yet.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var msg in Model)
+            {
+                <tr>
+                    <td>@msg.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@msg.Name</td>
+                    <td><a href="mailto:@msg.Email">@msg.Email</a></td>
+                    <td>@msg.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

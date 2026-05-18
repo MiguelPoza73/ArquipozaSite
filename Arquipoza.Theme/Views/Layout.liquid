@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ Site.SiteName }} - Architecture Studio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Arquipoza.Theme/css/arquipoza.css" />
+    <style>
+        article.content-item.page header h1 { display: none; }
+        html { height: auto !important; }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='1' y='1' width='34' height='34' stroke='%23b8966e' stroke-width='0.5' fill='%230f0f0f' opacity='1'/><path d='M 18 18 Q 35 18 35 35' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 1 35 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 1 18 1 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 27 10 27' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 14 18 14 22' stroke='%23b8966e' stroke-width='1.5' fill='none'/><circle cx='18' cy='18' r='1.2' fill='%23b8966e'/></svg>" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/Arquipoza.Module/Home/Index" style="display:flex; align-items:center; gap:0.8rem; text-decoration:none;">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fibonacci spiral approximation with arcs -->
+                    <rect x="1" y="1" width="34" height="34" stroke="#b8966e" stroke-width="0.5" fill="none" opacity="0.3"/>
+                    <!-- Large arc (bottom-right quadrant) -->
+                    <path d="M 18 18 Q 35 18 35 35" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Medium arc (top-right quadrant) -->
+                    <path d="M 18 18 Q 18 1 35 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Small arc (top-left quadrant) -->
+                    <path d="M 18 18 Q 1 18 1 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Smaller arc -->
+                    <path d="M 18 18 Q 18 27 10 27" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Tiny arc -->
+                    <path d="M 18 18 Q 14 18 14 22" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Center dot -->
+                    <circle cx="18" cy="18" r="1.2" fill="#b8966e"/>
+                </svg>
+                <span>{{ Site.SiteName }}</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Arquipoza.Module/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sketchbook">Sketchbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/quote">Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        {% zone "Content" %}{% endzone %}
+        {{ Model.Content }}
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; {{ "now" | date: "%Y" }} {{ Site.SiteName }}. Architecture Studio.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

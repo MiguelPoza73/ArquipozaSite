@@ -1,0 +1,82 @@
+<div style="padding: 6rem 2rem; background: var(--color-primary);">
+    <div class="container">
+
+        <p style="color:#b8966e; font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; margin-bottom:1rem;">Get In Touch</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; letter-spacing:4px; color:#fff; text-transform:uppercase; border-bottom:1px solid #b8966e; padding-bottom:1rem; margin-bottom:3rem;">Contact Us</h1>
+
+        @if (TempData["Success"] != null)
+        {
+            <div style="background:rgba(184,150,110,0.2); border-left:3px solid #b8966e; padding:1rem 1.5rem; margin-bottom:2rem; color:#fff;">
+                @TempData["Success"]
+            </div>
+        }
+
+        <div class="row">
+            <!-- Info -->
+            <div class="col-md-4 mb-5">
+                <div style="margin-bottom:3rem;">
+                    <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.5rem;">Address</p>
+                    <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.8;">Calle Ferraz nº39<br />28013 Madrid, Spain</p>
+                </div>
+                <div style="margin-bottom:3rem;">
+                    <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.5rem;">Email</p>
+                    <a href="mailto:info@arquipoza.com" style="color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem;">arquipoza@hotmail.com</a>
+                </div>
+                <div style="margin-bottom:3rem;">
+                    <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.5rem;">Phone</p>
+                    <a href="tel:+34911234567" style="color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.9rem;">+34 66 765 23 41</a>
+                </div>
+                <div>
+                    <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.5rem;">Office Hours</p>
+                    <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; line-height:1.8;">Mon — Fri: 9:00 — 18:00<br />Sat: 10:00 — 14:00</p>
+                </div>
+
+                <!-- Social -->
+                <div style="margin-top:3rem; border-top:1px solid rgba(184,150,110,0.3); padding-top:2rem;">
+                    <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem;">Follow Us</p>
+                    <div style="display:flex; gap:1rem;">
+                        <a href="https://instagram.com/arquipoza" target="_blank" style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">IG</a>
+                        <a href="https://linkedin.com/company/arquipoza" target="_blank" style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">LI</a>
+                        <a href="https://pinterest.com/arquipoza" target="_blank" style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">PT</a>
+                        <a href="https://behance.net/arquipoza" target="_blank" style="color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">BE</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <div class="col-md-8">
+                <form method="post" action="/Arquipoza.Module/Contact/Submit">
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase;">Name</label>
+                            <input name="name" type="text" class="form-control mt-1" style="background:#1a1a1a; border:1px solid rgba(184,150,110,0.3); color:#fff; border-radius:0;" required />
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase;">Email</label>
+                            <input name="email" type="email" class="form-control mt-1" style="background:#1a1a1a; border:1px solid rgba(184,150,110,0.3); color:#fff; border-radius:0;" required />
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase;">Message</label>
+                        <textarea name="message" rows="8" class="form-control mt-1" style="background:#1a1a1a; border:1px solid rgba(184,150,110,0.3); color:#fff; border-radius:0; resize:none;" required></textarea>
+                    </div>
+                    <button type="submit" style="background:transparent; border:1px solid #b8966e; color:#b8966e; padding:0.8rem 3rem; font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; cursor:pointer;">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map -->
+    <div style="margin-top:4rem; border-top:1px solid rgba(184,150,110,0.3); padding-top:3rem;">
+        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:1.5rem;">Find Us</p>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7180%2C40.4220%2C-3.7080%2C40.4280&layer=mapnik&marker=40.4250%2C-3.7130"
+                width="100%"
+                height="400"
+                style="border:0; filter:grayscale(100%) contrast(90%);"
+                loading="lazy">
+        </iframe>
+    </div>
+</div>

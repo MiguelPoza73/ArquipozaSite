@@ -1,0 +1,28 @@
+@model Arquipoza.Module.ViewModels.ProjectPartViewModel
+
+<div class="project-summary" style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+    @if (!string.IsNullOrEmpty(Model.Location))
+    {
+        <span style="color:#b8966e; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">
+            📍 @Model.Location
+        </span>
+    }
+    @if (Model.Year > 0)
+    {
+        <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:2px;">
+            @Model.Year
+        </span>
+    }
+    @if (!string.IsNullOrEmpty(Model.ProjectType))
+    {
+        <span style="background:rgba(184,150,110,0.2); color:#b8966e; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; padding:0.2rem 0.6rem;">
+            @Model.ProjectType
+        </span>
+    }
+    @if (Model.IsFeatured)
+    {
+        <span style="background:#b8966e; color:#0f0f0f; font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; padding:0.2rem 0.6rem;">
+            Featured
+        </span>
+    }
+</div>

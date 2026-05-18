@@ -1,0 +1,44 @@
+@model Arquipoza.Module.ViewModels.ProjectPartViewModel
+
+<div class="project-part-editor">
+    <div class="mb-3">
+        <label class="form-label">Client</label>
+        <input name="ProjectPart.ClientName" value="@Model.ClientName" class="form-control" placeholder="Client name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input name="ProjectPart.Location" value="@Model.Location" class="form-control" placeholder="City, Country" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input name="ProjectPart.Year" value="@Model.Year" type="number" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Project Type</label>
+        <select name="ProjectPart.ProjectType" class="form-select">
+            <option value="Residential" @(Model.ProjectType == "Residential" ? "selected" : "")>Residential</option>
+            <option value="Commercial" @(Model.ProjectType == "Commercial" ? "selected" : "")>Commercial</option>
+            <option value="Cultural" @(Model.ProjectType == "Cultural" ? "selected" : "")>Cultural</option>
+            <option value="Industrial" @(Model.ProjectType == "Industrial" ? "selected" : "")>Industrial</option>
+            <option value="Urban" @(Model.ProjectType == "Urban" ? "selected" : "")>Urban</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Surface</label>
+        <input name="ProjectPart.Surface" value="@Model.Surface" class="form-control" placeholder="e.g. 250 m²" />
+    </div>
+
+    <div class="mb-3 form-check">
+        <input name="ProjectPart.IsFeatured" value="true" type="checkbox" class="form-check-input" @(Model.IsFeatured ? "checked" : "") />
+        <label class="form-check-label">Featured Project</label>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input name="ProjectPart.ImageUrl" value="@Model.ImageUrl" class="form-control" placeholder="/media/project1.jpg" />
+    </div>
+</div>

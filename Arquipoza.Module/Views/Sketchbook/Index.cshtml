@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+<div style="background: var(--color-primary); min-height: 100vh; padding: 6rem 0;">
+
+    <!-- Header -->
+    <div class="container text-center mb-5" data-aos="fade-up">
+        <p style="color:#b8966e; font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; margin-bottom:1rem;">Hand Drawn</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; letter-spacing:6px; color:#fff; text-transform:uppercase;">Studio Sketchbook</h1>
+        <div style="width:60px; height:1px; background:#b8966e; margin:2rem auto;"></div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; letter-spacing:2px; max-width:500px; margin:0 auto;">
+            A glimpse into our creative process through hand-drawn sketches and architectural studies.
+        </p>
+    </div>
+
+    <!-- Carousel -->
+    <div style="position:relative; max-width:900px; margin:0 auto; padding:0 2rem;">
+
+        <div id="sketchCarousel" style="position:relative; overflow:hidden; border:1px solid rgba(184,150,110,0.2);">
+
+            <!-- Slides -->
+            @for (int i = 1; i <= 10; i++)
+            {
+                <div class="sketch-slide" style="display:@(i == 1 ? "block" : "none"); position:relative;">
+                    <img src="/media/Dibujo@(i).jpg" alt="Sketch @i"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch @i / 10</p>
+                    </div>
+                </div>
+            }
+
+            <!-- Prev/Next buttons -->
+            <button onclick="changeSlide(-1)" style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:45px; height:45px; font-size:1.2rem; cursor:pointer; z-index:10;">‹</button>
+            <button onclick="changeSlide(1)" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:45px; height:45px; font-size:1.2rem; cursor:pointer; z-index:10;">›</button>
+        </div>
+
+        <!-- Dots -->
+        <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:1.5rem;">
+            @for (int i = 0; i < 10; i++)
+            {
+                <button onclick="goToSlide(@i)" class="sketch-dot" id="dot-@i"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:@(i == 0 ? "#b8966e" : "rgba(255,255,255,0.2)"); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+            }
+        </div>
+
+        <!-- Thumbnail strip -->
+        <div style="display:flex; gap:0.5rem; margin-top:1.5rem; overflow-x:auto; padding-bottom:0.5rem;">
+            @for (int i = 1; i <= 10; i++)
+            {
+                <img src="/media/Dibujo@(i).jpg" alt="Sketch @i" onclick="goToSlide(@(i - 1))"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:@(i == 1 ? "1" : "0.4"); border:@(i == 1 ? "1px solid #b8966e" : "1px solid transparent"); transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-@(i - 1)" />
+            }
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ once: true });
+
+    let current = 0;
+    const slides = document.querySelectorAll('.sketch-slide');
+    const dots = document.querySelectorAll('.sketch-dot');
+    const thumbs = document.querySelectorAll('[id^="thumb-"]');
+
+    function goToSlide(n) {
+        slides[current].style.display = 'none';
+        slides[current].style.opacity = '0';
+        dots[current].style.background = 'rgba(255,255,255,0.2)';
+        thumbs[current].style.opacity = '0.4';
+        thumbs[current].style.border = '1px solid transparent';
+
+        current = (n + slides.length) % slides.length;
+
+        slides[current].style.display = 'block';
+        setTimeout(() => slides[current].style.opacity = '1', 10);
+        dots[current].style.background = '#b8966e';
+        thumbs[current].style.opacity = '1';
+        thumbs[current].style.border = '1px solid #b8966e';
+    }
+
+    function changeSlide(dir) {
+        goToSlide(current + dir);
+    }
+
+    // Auto advance
+    setInterval(() => changeSlide(1), 5000);
+</script>
