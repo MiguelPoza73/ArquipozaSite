@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquipoza - Architecture Studio</title>
+    <link rel="stylesheet" href="../assets/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/arquipoza.css" />
+    <style>
+        article.content-item.page header h1 { display: none; }
+        html { height: auto !important; }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='1' y='1' width='34' height='34' stroke='%23b8966e' stroke-width='0.5' fill='%230f0f0f' opacity='1'/><path d='M 18 18 Q 35 18 35 35' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 1 35 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 1 18 1 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 27 10 27' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 14 18 14 22' stroke='%23b8966e' stroke-width='1.5' fill='none'/><circle cx='18' cy='18' r='1.2' fill='%23b8966e'/></svg>" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../" style="display:flex; align-items:center; gap:0.8rem; text-decoration:none;">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fibonacci spiral approximation with arcs -->
+                    <rect x="1" y="1" width="34" height="34" stroke="#b8966e" stroke-width="0.5" fill="none" opacity="0.3"/>
+                    <!-- Large arc (bottom-right quadrant) -->
+                    <path d="M 18 18 Q 35 18 35 35" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Medium arc (top-right quadrant) -->
+                    <path d="M 18 18 Q 18 1 35 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Small arc (top-left quadrant) -->
+                    <path d="M 18 18 Q 1 18 1 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Smaller arc -->
+                    <path d="M 18 18 Q 18 27 10 27" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Tiny arc -->
+                    <path d="M 18 18 Q 14 18 14 22" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Center dot -->
+                    <circle cx="18" cy="18" r="1.2" fill="#b8966e"/>
+                </svg>
+                <span>Arquipoza</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../portfolio/">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../sketchbook/">Sketchbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quote/">Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        
+        
+
+<div style="background: var(--color-primary); min-height: 100vh; padding: 6rem 0;">
+
+    <!-- Header -->
+    <div class="container text-center mb-5">
+        <p style="color:#b8966e; font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; margin-bottom:1rem;">Hand Drawn</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; letter-spacing:6px; color:#fff; text-transform:uppercase;">Studio Sketchbook</h1>
+        <div style="width:60px; height:1px; background:#b8966e; margin:2rem auto;"></div>
+        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; letter-spacing:2px; max-width:500px; margin:0 auto;">
+            A glimpse into our creative process through hand-drawn sketches and architectural studies.
+        </p>
+    </div>
+
+    <!-- Carousel -->
+    <div style="position:relative; max-width:900px; margin:0 auto; padding:0 2rem;">
+
+        <div id="sketchCarousel" style="position:relative; overflow:hidden; border:1px solid rgba(184,150,110,0.2);">
+
+            <!-- Slides -->
+            
+                <div class="sketch-slide" style="display:block; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo1.webp" alt="Sketch 1"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 1 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo2.webp" alt="Sketch 2"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 2 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo3.webp" alt="Sketch 3"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 3 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo4.webp" alt="Sketch 4"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 4 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo5.webp" alt="Sketch 5"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 5 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo6.webp" alt="Sketch 6"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 6 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo7.webp" alt="Sketch 7"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 7 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo8.webp" alt="Sketch 8"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 8 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo9.webp" alt="Sketch 9"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 9 / 10</p>
+                    </div>
+                </div>
+                <div class="sketch-slide" style="display:none; position:relative;">
+                    <img loading="lazy" decoding="async" src="../media/Dibujo10.webp" alt="Sketch 10"
+                         style="width:100%; height:600px; object-fit:contain; background:#111;" />
+                    <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.8)); padding:2rem; text-align:center;">
+                        <p style="color:#b8966e; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;">Sketch 10 / 10</p>
+                    </div>
+                </div>
+
+            <!-- Prev/Next buttons -->
+            <button onclick="changeSlide(-1)" style="position:absolute; left:1rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:45px; height:45px; font-size:1.2rem; cursor:pointer; z-index:10;">‹</button>
+            <button onclick="changeSlide(1)" style="position:absolute; right:1rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:45px; height:45px; font-size:1.2rem; cursor:pointer; z-index:10;">›</button>
+        </div>
+
+        <!-- Dots -->
+        <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:1.5rem;">
+            
+                <button onclick="goToSlide(0)" class="sketch-dot" id="dot-0"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:#b8966e; cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(1)" class="sketch-dot" id="dot-1"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(2)" class="sketch-dot" id="dot-2"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(3)" class="sketch-dot" id="dot-3"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(4)" class="sketch-dot" id="dot-4"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(5)" class="sketch-dot" id="dot-5"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(6)" class="sketch-dot" id="dot-6"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(7)" class="sketch-dot" id="dot-7"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(8)" class="sketch-dot" id="dot-8"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+                <button onclick="goToSlide(9)" class="sketch-dot" id="dot-9"
+                        style="width:8px; height:8px; border-radius:50%; border:none; background:rgba(255,255,255,0.2); cursor:pointer; padding:0; transition:background 0.3s ease;"></button>
+        </div>
+
+        <!-- Thumbnail strip -->
+        <div style="display:flex; gap:0.5rem; margin-top:1.5rem; overflow-x:auto; padding-bottom:0.5rem;">
+            
+                <img loading="lazy" decoding="async" src="../media/Dibujo1.webp" alt="Sketch 1" onclick="goToSlide(0)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:1; border:1px solid #b8966e; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-0" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo2.webp" alt="Sketch 2" onclick="goToSlide(1)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-1" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo3.webp" alt="Sketch 3" onclick="goToSlide(2)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-2" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo4.webp" alt="Sketch 4" onclick="goToSlide(3)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-3" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo5.webp" alt="Sketch 5" onclick="goToSlide(4)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-4" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo6.webp" alt="Sketch 6" onclick="goToSlide(5)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-5" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo7.webp" alt="Sketch 7" onclick="goToSlide(6)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-6" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo8.webp" alt="Sketch 8" onclick="goToSlide(7)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-7" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo9.webp" alt="Sketch 9" onclick="goToSlide(8)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-8" />
+                <img loading="lazy" decoding="async" src="../media/Dibujo10.webp" alt="Sketch 10" onclick="goToSlide(9)"
+                     style="width:80px; height:60px; object-fit:cover; cursor:pointer; opacity:0.4; border:1px solid transparent; transition:all 0.3s ease; flex-shrink:0;"
+                     id="thumb-9" />
+        </div>
+    </div>
+</div>
+
+
+<script>
+    
+
+    let current = 0;
+    const slides = document.querySelectorAll('.sketch-slide');
+    const dots = document.querySelectorAll('.sketch-dot');
+    const thumbs = document.querySelectorAll('[id^="thumb-"]');
+
+    function goToSlide(n) {
+        slides[current].style.display = 'none';
+        slides[current].style.opacity = '0';
+        dots[current].style.background = 'rgba(255,255,255,0.2)';
+        thumbs[current].style.opacity = '0.4';
+        thumbs[current].style.border = '1px solid transparent';
+
+        current = (n + slides.length) % slides.length;
+
+        slides[current].style.display = 'block';
+        setTimeout(() => slides[current].style.opacity = '1', 10);
+        dots[current].style.background = '#b8966e';
+        thumbs[current].style.opacity = '1';
+        thumbs[current].style.border = '1px solid #b8966e';
+    }
+
+    function changeSlide(dir) {
+        goToSlide(current + dir);
+    }
+
+    // Auto advance
+    setInterval(() => changeSlide(1), 5000);
+</script>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Arquipoza. Architecture Studio.</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap.js"></script>
+<script src="../assets/site.js" defer></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ae58db79ce014a',t:'MTc5NDc0NjY2NA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ae58db79ce014a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

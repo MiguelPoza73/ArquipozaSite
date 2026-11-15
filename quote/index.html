@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquipoza - Architecture Studio</title>
+    <link rel="stylesheet" href="../assets/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/arquipoza.css" />
+    <style>
+        article.content-item.page header h1 { display: none; }
+        html { height: auto !important; }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='1' y='1' width='34' height='34' stroke='%23b8966e' stroke-width='0.5' fill='%230f0f0f' opacity='1'/><path d='M 18 18 Q 35 18 35 35' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 1 35 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 1 18 1 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 27 10 27' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 14 18 14 22' stroke='%23b8966e' stroke-width='1.5' fill='none'/><circle cx='18' cy='18' r='1.2' fill='%23b8966e'/></svg>" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../" style="display:flex; align-items:center; gap:0.8rem; text-decoration:none;">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Fibonacci spiral approximation with arcs -->
+                    <rect x="1" y="1" width="34" height="34" stroke="#b8966e" stroke-width="0.5" fill="none" opacity="0.3"/>
+                    <!-- Large arc (bottom-right quadrant) -->
+                    <path d="M 18 18 Q 35 18 35 35" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Medium arc (top-right quadrant) -->
+                    <path d="M 18 18 Q 18 1 35 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Small arc (top-left quadrant) -->
+                    <path d="M 18 18 Q 1 18 1 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Smaller arc -->
+                    <path d="M 18 18 Q 18 27 10 27" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Tiny arc -->
+                    <path d="M 18 18 Q 14 18 14 22" stroke="#b8966e" stroke-width="1.5" fill="none"/>
+                    <!-- Center dot -->
+                    <circle cx="18" cy="18" r="1.2" fill="#b8966e"/>
+                </svg>
+                <span>Arquipoza</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../portfolio/">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../sketchbook/">Sketchbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quote/">Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        
+        <div class="container my-5">
+    <h1 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 4px; font-weight: 300; text-transform: uppercase; border-bottom: 1px solid var(--color-secondary); padding-bottom: 1rem;">
+        Request a Quote
+    </h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 2px; margin-top: 1rem; margin-bottom: 3rem;">
+        Tell us about your project and we will get back to you within 48 hours.
+    </p>
+
+    
+
+    <form method="post" action="mailto:arquipoza@hotmail.com" data-email-form="Quote" style="max-width: 700px;">
+        
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Name</label>
+                <input name="name" type="text" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" required />
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Email</label>
+                <input name="email" type="email" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Phone</label>
+                <input name="phone" type="tel" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;" />
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Project Type</label>
+                <select name="projectType" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select type...</option>
+                    <option value="Residential">Residential</option>
+                    <option value="Commercial">Commercial</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Urban">Urban Planning</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Budget (€)</label>
+                <select name="budget" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select budget...</option>
+                    <option value="50k-100k">50.000 - 100.000 €</option>
+                    <option value="100k-250k">100.000 - 250.000 €</option>
+                    <option value="250k-500k">250.000 - 500.000 €</option>
+                    <option value="500k+">500.000 € +</option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Timeline</label>
+                <select name="timeline" class="form-select mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0;">
+                    <option value="">Select timeline...</option>
+                    <option value="3-6months">3 - 6 months</option>
+                    <option value="6-12months">6 - 12 months</option>
+                    <option value="1-2years">1 - 2 years</option>
+                    <option value="2years+">2+ years</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label style="color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Project Description</label>
+            <textarea name="description" rows="6" class="form-control mt-1" style="background: #1a1a1a; border: 1px solid rgba(184,150,110,0.3); color: var(--color-light); border-radius: 0; resize: none;" placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <button type="submit" style="background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary); padding: 0.8rem 3rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; cursor: pointer;">
+            Submit Request
+        </button>
+    <p class="mt-3" style="color:#aaa;font-size:.8rem">This opens your email app. Send the email to complete your request.</p></form>
+</div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Arquipoza. Architecture Studio.</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap.js"></script>
+<script src="../assets/site.js" defer></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ae58e39ac9ec91',t:'MTc5NDc0NjY2NQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ae58e39ac9ec91',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
