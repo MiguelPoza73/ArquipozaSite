@@ -204,4 +204,4 @@ article.content-item.page {
 main {
     flex: 1 !important;
 }
-@media(max-width:767px){.navbar{padding:1rem}.navbar-brand{font-size:1.4rem;letter-spacing:3px}h1{font-size:clamp(2rem,9vw,4rem)!important;letter-spacing:4px!important}.hero-full{padding:2rem}img{max-width:100%}.navbar-toggler{border-color:#b8966e}.navbar-toggler-icon{filter:invert(1)}#obraCarousel img{height:350px!important}}
+@media(max-width:767px){.navbar{padding:1rem}.navbar-brand{font-size:1.4rem;letter-spacing:3px}h1{font-size:clamp(2rem,9vw,4rem)!important;letter-spacing:4px!important}.hero-full{padding:2rem}img{max-width:100%}.navbar-toggler{border-color:#b8966e}.navbar-toggler-icon{filter:invert(1)}}

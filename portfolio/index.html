@@ -6,6 +6,7 @@
     <title>Arquipoza - Architecture Studio</title>
     <link rel="stylesheet" href="../assets/bootstrap.css" />
     <link rel="stylesheet" href="../assets/arquipoza.css" />
+    <link rel="stylesheet" href="../assets/current-project.css" />
     <style>
         article.content-item.page header h1 { display: none; }
         html { height: auto !important; }
@@ -428,243 +429,78 @@
                     </div>
                 </a>
             </div></div><div id="pagination" style="display:flex;justify-content:center;gap:.5rem"></div>    <!-- Live Project Section -->
-    <div style="margin-top:5rem; border-top:1px solid rgba(184,150,110,0.3); padding-top:4rem;">
-        <p style="color:#b8966e; font-size:0.75rem; letter-spacing:5px; text-transform:uppercase; margin-bottom:0.5rem;">Currently On Site</p>
-        <h2 style="font-family:'Cormorant Garamond',serif; color:#fff; font-size:3rem; font-weight:300; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.5rem;">Current Project</h2>
-        <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; letter-spacing:2px; margin-bottom:1rem;">Traditional Stone House Restoration — Castilla y León, Spain</p>
-
-        <!-- Progress Bar -->
-        <div style="max-width:400px; margin-bottom:3rem;">
-            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
-                <span style="color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:2px; text-transform:uppercase;">Progress</span>
-                <span id="progressPercent" style="color:#b8966e; font-size:0.7rem; letter-spacing:2px;">0%</span>
+    <section class="cp" aria-labelledby="cp-title">
+        <div class="cp-head">
+            <div class="reveal">
+                <p class="eyebrow">Currently On Site</p>
+                <h2 id="cp-title">Current Project</h2>
+                <p class="cp-loc">Traditional Stone House Restoration — Castilla y León, Spain</p>
             </div>
-            <div style="background:rgba(255,255,255,0.1); height:2px;">
-                <div style="background:#b8966e; height:2px; width:0%; transition:width 1.5s ease;" id="progressBar"></div>
-            </div>
-        </div>
-
-        <!-- Timeline -->
-        <div style="position:relative;">
-            ,
-                        new { img = "obra2.jpeg", phase = "Phase 2", desc = "Exterior structure with machinery" },
-                        new { img = "obra3.jpeg", phase = "Phase 3", desc = "Metal structure & roof" },
-                        new { img = "obra4.jpeg", phase = "Phase 4", desc = "Interior wooden roof detail" },
-                        new { img = "obra5.jpeg", phase = "Phase 5", desc = "Enclosure works" },
-                        new { img = "obra6.jpeg", phase = "Phase 6", desc = "Advanced exterior phase" },
-                        new { img = "obra7.jpeg", phase = "Phase 7", desc = "Near final result" }
-                        };
-            }
-
-            <!-- Main Carousel -->
-            <div style="position:relative; overflow:hidden; margin-bottom:1.5rem;">
-                <div id="obraCarousel" style="display:flex; transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);">
-                    
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra1.webp" alt="Phase 1"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 1</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Initial state & demolition</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra2.webp" alt="Phase 2"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 2</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Exterior structure with machinery</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra3.webp" alt="Phase 3"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 3</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Metal structure & roof</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra4.webp" alt="Phase 4"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 4</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Interior wooden roof detail</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra5.webp" alt="Phase 5"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 5</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Enclosure works</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra6.webp" alt="Phase 6"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 6</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Advanced exterior phase</p>
-                            </div>
-                        </div>
-                        <div style="min-width:100%; position:relative;">
-                            <img loading="lazy" decoding="async" src="../media/obra7.webp" alt="Phase 7"
-                                 style="width:100%; height:550px; object-fit:cover;" />
-                            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent, rgba(0,0,0,0.9)); padding:2.5rem;">
-                                <p style="color:#b8966e; font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem;">Phase 7</p>
-                                <p style="color:#fff; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300; margin:0;">Near final result</p>
-                            </div>
-                        </div>
-                </div>
-
-                <!-- Prev/Next -->
-                <button onclick="obraSlide(-1)" style="position:absolute; left:1.5rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:50px; height:50px; font-size:1.5rem; cursor:pointer; z-index:10; transition:all 0.3s ease;"
-                        onmouseover="this.style.background='rgba(184,150,110,0.3)'"
-                        onmouseout="this.style.background='rgba(0,0,0,0.6)'">
-                    ‹
-                </button>
-                <button onclick="obraSlide(1)" style="position:absolute; right:1.5rem; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.5); color:#b8966e; width:50px; height:50px; font-size:1.5rem; cursor:pointer; z-index:10; transition:all 0.3s ease;"
-                        onmouseover="this.style.background='rgba(184,150,110,0.3)'"
-                        onmouseout="this.style.background='rgba(0,0,0,0.6)'">
-                    ›
-                </button>
-
-                <!-- Counter -->
-                <div style="position:absolute; top:1.5rem; right:1.5rem; background:rgba(0,0,0,0.6); border:1px solid rgba(184,150,110,0.3); padding:0.4rem 1rem;">
-                    <span id="obraCounter" style="color:#b8966e; font-size:0.75rem; letter-spacing:2px;">1 / 7</span>
-                </div>
-            </div>
-
-            <!-- Thumbnail Strip -->
-            <div style="display:flex; gap:0.5rem; overflow-x:auto; padding-bottom:0.5rem;">
-                
-                    <div onclick="obraGoTo(0)" id="obraThumb-0"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid #b8966e; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra1.webp" alt="Phase 1"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 1</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(1)" id="obraThumb-1"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra2.webp" alt="Phase 2"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 2</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(2)" id="obraThumb-2"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra3.webp" alt="Phase 3"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 3</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(3)" id="obraThumb-3"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra4.webp" alt="Phase 4"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 4</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(4)" id="obraThumb-4"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra5.webp" alt="Phase 5"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 5</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(5)" id="obraThumb-5"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra6.webp" alt="Phase 6"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 6</p>
-                        </div>
-                    </div>
-                    <div onclick="obraGoTo(6)" id="obraThumb-6"
-                         style="min-width:120px; cursor:pointer; position:relative; overflow:hidden; border:2px solid transparent; transition:all 0.3s ease;"
-                         onmouseover="this.querySelector('img').style.transform='scale(1.08)'"
-                         onmouseout="this.querySelector('img').style.transform='scale(1)'">
-                        <img loading="lazy" decoding="async" src="../media/obra7.webp" alt="Phase 7"
-                             style="width:120px; height:75px; object-fit:cover; transition:transform 0.3s ease; display:block;" />
-                        <div style="position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); padding:0.2rem 0.4rem;">
-                            <p style="color:#b8966e; font-size:0.6rem; letter-spacing:1px; text-transform:uppercase; margin:0;">Phase 7</p>
-                        </div>
-                    </div>
+            <div class="cp-panel reveal" style="--d:.15s; --pct:95%">
+                <dl>
+                    <div><dt>Status</dt><dd class="live">On site</dd></div>
+                    <div><dt>Stage</dt><dd>Phase 7 of 7</dd></div>
+                    <div><dt>Progress</dt><dd>95%</dd></div>
+                </dl>
+                <div class="cp-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Overall progress"><i></i></div>
             </div>
         </div>
 
-        <!-- Lightbox -->
-        <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.97); z-index:9999; align-items:center; justify-content:center; flex-direction:column;">
-            <img loading="lazy" decoding="async" id="lightboxImg" src="" style="max-width:90%; max-height:80vh; object-fit:contain;" />
-            <p id="lightboxCaption" style="color:#b8966e; font-size:0.75rem; letter-spacing:3px; text-transform:uppercase; margin-top:1.5rem;"></p>
-            <button onclick="closeLightbox()" style="position:absolute; top:2rem; right:2rem; background:transparent; border:1px solid #b8966e; color:#b8966e; padding:0.5rem 1rem; cursor:pointer; font-size:0.75rem; letter-spacing:2px;">CLOSE ✕</button>
+        <div class="cp-viewer reveal" style="--d:.25s" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Construction phases — press Enter to enlarge">
+            <figure class="cp-slide is-active" data-phase="Phase 1" data-desc="Initial state &amp; demolition">
+                <img src="../media/obra1.webp" alt="Phase 1 — Initial state &amp; demolition" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">01</span><div><small>Phase 1</small><span>Initial state &amp; demolition</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 2" data-desc="Exterior structure with machinery">
+                <img src="../media/obra2.webp" alt="Phase 2 — Exterior structure with machinery" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">02</span><div><small>Phase 2</small><span>Exterior structure with machinery</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 3" data-desc="Metal structure &amp; roof">
+                <img src="../media/obra3.webp" alt="Phase 3 — Metal structure &amp; roof" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">03</span><div><small>Phase 3</small><span>Metal structure &amp; roof</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 4" data-desc="Interior wooden roof detail">
+                <img src="../media/obra4.webp" alt="Phase 4 — Interior wooden roof detail" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">04</span><div><small>Phase 4</small><span>Interior wooden roof detail</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 5" data-desc="Enclosure works">
+                <img src="../media/obra5.webp" alt="Phase 5 — Enclosure works" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">05</span><div><small>Phase 5</small><span>Enclosure works</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 6" data-desc="Advanced exterior phase">
+                <img src="../media/obra6.webp" alt="Phase 6 — Advanced exterior phase" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">06</span><div><small>Phase 6</small><span>Advanced exterior phase</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Phase 7" data-desc="Near final result">
+                <img src="../media/obra7.webp" alt="Phase 7 — Near final result" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">07</span><div><small>Phase 7</small><span>Near final result</span></div></figcaption>
+            </figure>
+            <div class="cp-counter" aria-live="polite"><b>01</b> / 07</div>
+            <button type="button" class="cp-arrow prev" aria-label="Previous phase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button type="button" class="cp-arrow next" aria-label="Next phase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
 
-        <script>
-                        // Progress bar
-            const obraProgress = [0, 15, 30, 45, 60, 80, 95];
+        <div class="cp-timeline reveal" style="--d:.35s">
+            <span class="cp-line" aria-hidden="true"></span>
+            <ol class="cp-phases">
+            <li><button type="button" class="cp-phase" aria-current="step" aria-label="Phase 1: Initial state &amp; demolition"><span class="thumb"><img src="../media/obra1.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 1</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 2: Exterior structure with machinery"><span class="thumb"><img src="../media/obra2.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 2</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 3: Metal structure &amp; roof"><span class="thumb"><img src="../media/obra3.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 3</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 4: Interior wooden roof detail"><span class="thumb"><img src="../media/obra4.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 4</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 5: Enclosure works"><span class="thumb"><img src="../media/obra5.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 5</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 6: Advanced exterior phase"><span class="thumb"><img src="../media/obra6.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 6</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Phase 7: Near final result"><span class="thumb"><img src="../media/obra7.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Phase 7</span></button></li>
+            </ol>
+        </div>
 
-            window.addEventListener('load', function() {
-                setTimeout(() => { document.getElementById('progressBar').style.width = '0%'; }, 500);
-            });
-
-            // Obra Carousel
-            let obraCurrent = 0;
-            const obraTotal = 7;
-            const obraPhases = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Phase 5', 'Phase 6', 'Phase 7'];
-            const obraImgs = ['../media/obra1.webp','../media/obra2.webp','../media/obra3.webp','../media/obra4.webp','../media/obra5.webp','../media/obra6.webp','../media/obra7.webp'];
-
-            function obraGoTo(n) {
-                document.getElementById('obraThumb-' + obraCurrent).style.border = '2px solid transparent';
-                obraCurrent = (n + obraTotal) % obraTotal;
-                document.getElementById('obraCarousel').style.transform = 'translateX(-' + (obraCurrent * 100) + '%)';
-                document.getElementById('obraCounter').textContent = (obraCurrent + 1) + ' / ' + obraTotal;
-                document.getElementById('obraThumb-' + obraCurrent).style.border = '2px solid #b8966e';
-                document.getElementById('progressBar').style.width = obraProgress[obraCurrent] + '%';
-                document.getElementById('progressPercent').textContent = obraProgress[obraCurrent] + '%';
-            }
-
-            function obraSlide(dir) { obraGoTo(obraCurrent + dir); }
-
-            // Lightbox
-            function openLightbox(src, caption) {
-                document.getElementById('lightboxImg').src = src;
-                document.getElementById('lightboxCaption').textContent = caption;
-                document.getElementById('lightbox').style.display = 'flex';
-            }
-
-            function closeLightbox() {
-                document.getElementById('lightbox').style.display = 'none';
-            }
-
-            document.getElementById('obraCarousel').addEventListener('click', function() {
-                openLightbox(obraImgs[obraCurrent], obraPhases[obraCurrent]);
-            });            
-            // Click on main image opens lightbox
-            document.getElementById('obraCarousel').addEventListener('click', function() {
-                openLightbox(obraImgs[obraCurrent], obraPhases[obraCurrent]);
-            });
-        </script>
-</div>
+        <div id="lightbox" class="cp-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" aria-hidden="true">
+            <button type="button" class="close">CLOSE ✕</button>
+            <button type="button" class="cp-arrow prev" aria-label="Previous phase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <img src="" alt="">
+            <p></p>
+            <button type="button" class="cp-arrow next" aria-label="Next phase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+    </section>
     </main>
     <footer>
         <div class="container">
@@ -672,5 +508,7 @@
         </div>
     </footer>
     <script src="../assets/bootstrap.js"></script>
-<script src="../assets/site.js" defer></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ae58d81e608e76',t:'MTc5NDc0NjY2Mw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ae58d81e608e76',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/current-project.js" defer></script>
+</body>
 </html>
