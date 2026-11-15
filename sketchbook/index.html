@@ -65,14 +65,18 @@
     <main class="sk">
 
 <section class="sk-hero">
-    <svg class="sk-spiral" viewBox="-1 -1 38 38" aria-hidden="true">
-        <rect x="1" y="1" width="34" height="34" stroke-width=".06"/>
-        <path class="draw" pathLength="1" style="--i:0" d="M 18 18 Q 35 18 35 35" stroke-width=".09"/>
-        <path class="draw" pathLength="1" style="--i:1" d="M 18 18 Q 18 1 35 1" stroke-width=".09"/>
-        <path class="draw" pathLength="1" style="--i:2" d="M 18 18 Q 1 18 1 1" stroke-width=".09"/>
-        <path class="draw" pathLength="1" style="--i:3" d="M 18 18 Q 18 27 10 27" stroke-width=".09"/>
-        <path class="draw" pathLength="1" style="--i:4" d="M 18 18 Q 14 18 14 22" stroke-width=".09"/>
-        <circle cx="18" cy="18" r=".7"/>
+    <svg class="sk-spiral" viewBox="-25 -40 91 57" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <rect class="sq" pathLength="1" style="--i:0" x="0" y="0" width="1" height="1"/>
+        <rect class="sq" pathLength="1" style="--i:1" x="1" y="0" width="1" height="1"/>
+        <rect class="sq" pathLength="1" style="--i:2" x="0" y="1" width="2" height="2"/>
+        <rect class="sq" pathLength="1" style="--i:3" x="-3" y="0" width="3" height="3"/>
+        <rect class="sq" pathLength="1" style="--i:4" x="-3" y="-5" width="5" height="5"/>
+        <rect class="sq" pathLength="1" style="--i:5" x="2" y="-5" width="8" height="8"/>
+        <rect class="sq" pathLength="1" style="--i:6" x="-3" y="3" width="13" height="13"/>
+        <rect class="sq" pathLength="1" style="--i:7" x="-24" y="-5" width="21" height="21"/>
+        <rect class="sq" pathLength="1" style="--i:8" x="-24" y="-39" width="34" height="34"/>
+        <rect class="sq" pathLength="1" style="--i:9" x="10" y="-39" width="55" height="55"/>
+        <path class="spiral" pathLength="1" d="M 0 1 A 1 1 0 0 1 1 0 A 1 1 0 0 1 2 1 A 2 2 0 0 1 0 3 A 3 3 0 0 1 -3 0 A 5 5 0 0 1 2 -5 A 8 8 0 0 1 10 3 A 13 13 0 0 1 -3 16 A 21 21 0 0 1 -24 -5 A 34 34 0 0 1 10 -39 A 55 55 0 0 1 65 16"/>
     </svg>
     <div class="sk-hero__inner">
         <p class="eyebrow sk-anim" style="--d:.3s">Hand Drawn</p>
@@ -134,7 +138,7 @@
     <a class="sk-btn rv" style="--d:.2s" href="../quote/">Start your project</a>
 </section>
 
-<div class="sk-cursor" aria-hidden="true">View</div>
+<div class="sk-cursor" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></div>
 
 <div id="skViewer" class="sk-viewer" role="dialog" aria-modal="true" aria-label="Sketch viewer" aria-hidden="true">
     <header><span class="count"><b>01</b> / 10</span><button type="button" class="close">CLOSE ✕</button></header>

@@ -30,6 +30,7 @@
     /* cursor follower (desktop only) */
     const cursor = root.querySelector('.sk-cursor');
     if (cursor && matchMedia('(hover: hover) and (pointer: fine)').matches && !reduce) {
+        root.classList.add('cur');
         addEventListener('pointermove', e => {
             cursor.style.setProperty('--x', e.clientX + 'px');
             cursor.style.setProperty('--y', e.clientY + 'px');
