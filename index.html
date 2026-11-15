@@ -6,6 +6,7 @@
     <title>Arquipoza - Architecture Studio</title>
     <link rel="stylesheet" href="assets/bootstrap.css" />
     <link rel="stylesheet" href="assets/arquipoza.css" />
+    <link rel="stylesheet" href="assets/landing.css" />
     <style>
         article.content-item.page header h1 { display: none; }
         html { height: auto !important; }
@@ -61,30 +62,94 @@
             </div>
         </div>
     </nav>
-    <main>
-        
-        
+    <main class="lp">
+<div class="lp-progress" aria-hidden="true"></div>
 
-<section style="height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: var(--color-primary);">
-    <div>
-        <p style="color: var(--color-secondary); font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 2rem;">
-            Est. 2010 — Madrid, Spain
-        </p>
-        <h1 style="font-family: var(--font-heading); font-size: 7rem; font-weight: 300; letter-spacing: 15px; color: var(--color-light); text-transform: uppercase; line-height: 1; margin-bottom: 2rem;">
-            ARQUIPOZA
-        </h1>
-        <div style="width: 60px; height: 1px; background: var(--color-secondary); margin: 0 auto 2rem;"></div>
-        <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 3rem;">
-            Architecture that transforms spaces into experiences
-        </p>
-        <a href="portfolio/" style="border: 1px solid var(--color-secondary); color: var(--color-secondary); padding: 0.8rem 3rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none;">
-            Explore our work
-        </a>
+<section class="lp-hero">
+    <div class="lp-hero__bg" aria-hidden="true"></div>
+    <div class="lp-hero__inner">
+        <p class="eyebrow lp-fade-in">Est. 2010 — Madrid, Spain</p>
+        <h1 aria-label="Arquipoza"><span style="--i:0">A</span><span style="--i:1">R</span><span style="--i:2">Q</span><span style="--i:3">U</span><span style="--i:4">I</span><span style="--i:5">P</span><span style="--i:6">O</span><span style="--i:7">Z</span><span style="--i:8">A</span></h1>
+        <div class="rule"></div>
+        <p class="lp-hero__tag lp-fade-in">Architecture that transforms spaces into experiences</p>
+        <a class="btn-line lp-fade-in" href="portfolio/">Explore our work</a>
+    </div>
+    <div class="lp-scroll" aria-hidden="true">Scroll<i></i></div>
+</section>
+
+<section class="lp-manifesto">
+    <p class="eyebrow reveal">Who we are</p>
+    <p class="lp-words" data-gold="transform,inhabit,light">We create architecture that goes beyond aesthetics — spaces that truly transform the lives of those who inhabit them, shaped by light, matter and the people who live within.</p>
+</section>
+
+<section class="lp-stats" aria-label="Arquipoza in numbers">
+    <div class="lp-stat reveal"><b data-count="2010" data-from="1990">2010</b><small>Founded</small></div>
+    <div class="lp-stat reveal" style="--d:.1s"><b data-count="120" data-suffix="+">120+</b><small>Projects</small></div>
+    <div class="lp-stat reveal" style="--d:.2s"><b data-count="8">8</b><small>Awards</small></div>
+    <div class="lp-stat reveal" style="--d:.3s"><b data-count="5">5</b><small>Countries</small></div>
+</section>
+
+<section class="lp-works" aria-label="Selected projects">
+    <div class="lp-works__sticky">
+        <div class="lp-works__head">
+            <div>
+                <p class="eyebrow">Portfolio</p>
+                <h2>Selected Works</h2>
+            </div>
+            <div class="lp-works__count"><b class="lp-works__current">01</b> / 06</div>
+        </div>
+        <div class="lp-track">
+            <a class="lp-card" href="portfolio/41avjckgz5x8250d14dqy78e4j/"><span class="lp-card__num">01</span><div class="lp-card__img"><img src="media/casaLujo1.webp" alt="Luxury Block" loading="lazy"></div><h3>Luxury Block</h3><p><em>Commercial</em> · Barcelona</p></a>
+            <a class="lp-card" href="portfolio/4ws5wj8ynsn9rw5bsxwqxf0zx7/"><span class="lp-card__num">02</span><div class="lp-card__img"><img src="media/casa1.webp" alt="Casa Mediterránea" loading="lazy"></div><h3>Casa Mediterránea</h3><p><em>Residential</em> · Madrid</p></a>
+            <a class="lp-card" href="portfolio/4d9hxenb2c9pxra6hvs52yygx4/"><span class="lp-card__num">03</span><div class="lp-card__img"><img src="media/cultural3.webp" alt="Cultural Norway House" loading="lazy"></div><h3>Cultural Norway House</h3><p><em>Cultural</em> · Norway</p></a>
+            <a class="lp-card" href="portfolio/48g8bm4jm3wxt7zagv66s71z5m/"><span class="lp-card__num">04</span><div class="lp-card__img"><img src="media/oficina1.webp" alt="Office Tower Madrid" loading="lazy"></div><h3>Office Tower Madrid</h3><p><em>Urban</em> · Fuenlabrada</p></a>
+            <a class="lp-card" href="portfolio/4a7e5eq4qjtbb7beq8g9693amj/"><span class="lp-card__num">05</span><div class="lp-card__img"><img src="media/scottWeb.webp" alt="Scottweb Building" loading="lazy"></div><h3>Scottweb Building</h3><p><em>Commercial</em> · England</p></a>
+            <a class="lp-card" href="portfolio/4ss8rnd0rnyzg2094baydy5y44/"><span class="lp-card__num">06</span><div class="lp-card__img"><img src="media/industrial2.webp" alt="Industrial Warehouse" loading="lazy"></div><h3>Industrial Warehouse</h3><p><em>Industrial</em> · Toledo</p></a>
+            <a class="lp-card lp-card--more" href="portfolio/"><span>View all<br>projects →</span></a>
+        </div>
+        <div class="lp-works__bar" aria-hidden="true"><i></i></div>
     </div>
 </section>
 
+<section class="lp-values">
+    <div class="lp-values__head">
+        <p class="eyebrow reveal">Our values</p>
+        <h2 class="reveal" style="--d:.1s">What Drives Us</h2>
+    </div>
+    <div class="lp-values__grid">
+        <div class="lp-value reveal"><b>01</b><h3>Innovation</h3><p>We constantly push boundaries to find new solutions that redefine the architectural experience.</p></div>
+        <div class="lp-value reveal" style="--d:.15s"><b>02</b><h3>Sustainability</h3><p>Every project is designed with environmental responsibility at its core, building for the future.</p></div>
+        <div class="lp-value reveal" style="--d:.3s"><b>03</b><h3>Excellence</h3><p>We are committed to the highest standards of quality in every detail of every project we undertake.</p></div>
+    </div>
+</section>
 
-<script></script>
+<section class="lp-sketch">
+    <div class="lp-sketch__head">
+        <p class="eyebrow reveal">Sketchbook</p>
+        <h2 class="reveal" style="--d:.1s">Every project<br>begins by hand</h2>
+        <p class="reveal" style="--d:.2s">Before the first line on screen, there is a pencil, a sheet of paper and an idea taking shape.</p>
+        <a class="btn-line reveal" style="--d:.3s" href="sketchbook/">Open the sketchbook</a>
+    </div>
+    <div class="lp-sketch__stage" aria-hidden="true">
+        <figure style="left:46%;top:0;width:34%;--speed:.18;--rot:2deg"><img src="media/Dibujo3.webp" alt="" loading="lazy"></figure>
+        <figure style="left:2%;top:22%;width:30%;--speed:.08;--rot:-3deg"><img src="media/Dibujo1.webp" alt="" loading="lazy"></figure>
+        <figure style="left:70%;top:38%;width:27%;--speed:.3;--rot:-1.5deg"><img src="media/Dibujo2.webp" alt="" loading="lazy"></figure>
+        <figure style="left:28%;top:52%;width:36%;--speed:.14;--rot:1deg"><img src="media/Dibujo7.webp" alt="" loading="lazy"></figure>
+    </div>
+</section>
+
+<section class="lp-cta">
+    <div class="lp-cta__bg" aria-hidden="true"></div>
+    <div class="lp-cta__inner">
+        <p class="eyebrow reveal">Let's build together</p>
+        <h2 class="reveal" style="--d:.1s">Have a project <em>in mind?</em></h2>
+        <div class="rule reveal" style="--d:.2s"></div>
+        <div class="lp-cta__actions reveal" style="--d:.3s">
+            <a class="btn-line" href="quote/">Request a quote</a>
+            <a class="btn-line alt" href="contact/">Contact us</a>
+        </div>
+    </div>
+</section>
     </main>
     <footer>
         <div class="container">
@@ -92,5 +157,7 @@
         </div>
     </footer>
     <script src="assets/bootstrap.js"></script>
-<script src="assets/site.js" defer></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ae58d0bd02e2c2',t:'MTc5NDc0NjY2Mg=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ae58d0bd02e2c2',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script src="assets/site.js" defer></script>
+<script src="assets/landing.js" defer></script>
+</body>
 </html>
