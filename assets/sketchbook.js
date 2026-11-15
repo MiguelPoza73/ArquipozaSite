@@ -49,7 +49,7 @@
     let idx = 0, lastFocus = null;
 
     strip.innerHTML = items.map((it, i) =>
-        `<button type="button" aria-label="Sketch ${i + 1}"><img src="${it.querySelector('img').getAttribute('src')}" alt="" loading="lazy" decoding="async"></button>`).join('');
+        `<button type="button" aria-label="Boceto ${i + 1}"><img src="${it.querySelector('img').getAttribute('src')}" alt="" loading="lazy" decoding="async"></button>`).join('');
     const thumbs = [...strip.children];
 
     function show(n) {

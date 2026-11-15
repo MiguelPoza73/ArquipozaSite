@@ -1,37 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" style="height: auto;">
+<html lang="es" style="height: auto;">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arquipoza - Architecture Studio</title>
+    <title>Arquipoza - Estudio de Arquitectura</title>
     <link rel="stylesheet" href="../../assets/bootstrap.css" />
     <link rel="stylesheet" href="../../assets/arquipoza.css" />
     <style>
         article.content-item.page header h1 { display: none; }
         html { height: auto !important; }
     </style>
-    <link rel="icon" href="data:image/svg+xml,<svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='1' y='1' width='34' height='34' stroke='%23b8966e' stroke-width='0.5' fill='%230f0f0f' opacity='1'/><path d='M 18 18 Q 35 18 35 35' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 1 35 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 1 18 1 1' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 18 27 10 27' stroke='%23b8966e' stroke-width='1.5' fill='none'/><path d='M 18 18 Q 14 18 14 22' stroke='%23b8966e' stroke-width='1.5' fill='none'/><circle cx='18' cy='18' r='1.2' fill='%23b8966e'/></svg>" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-30 -62.0 101 101'%3E%3Crect x='-30' y='-62.0' width='101' height='101' fill='%230f0f0f'/%3E%3Cg fill='none' stroke='%23b8966e' stroke-width='1.4' stroke-opacity='0.45'%3E%3Crect x='0' y='1' width='2' height='2'/%3E%3Crect x='-3' y='0' width='3' height='3'/%3E%3Crect x='-3' y='-5' width='5' height='5'/%3E%3Crect x='2' y='-5' width='8' height='8'/%3E%3Crect x='-3' y='3' width='13' height='13'/%3E%3Crect x='-24' y='-5' width='21' height='21'/%3E%3Crect x='-24' y='-39' width='34' height='34'/%3E%3Crect x='10' y='-39' width='55' height='55'/%3E%3Crect x='-24' y='-39' width='89' height='55'/%3E%3C/g%3E%3Cpath d='M0 1A1 1 0 0 1 1 0A1 1 0 0 1 2 1A2 2 0 0 1 0 3A3 3 0 0 1 -3 0A5 5 0 0 1 2 -5A8 8 0 0 1 10 3A13 13 0 0 1 -3 16A21 21 0 0 1 -24 -5A34 34 0 0 1 10 -39A55 55 0 0 1 65 16' fill='none' stroke='%23b8966e' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="../../" style="display:flex; align-items:center; gap:0.8rem; text-decoration:none;">
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Fibonacci spiral approximation with arcs -->
-                    <rect x="1" y="1" width="34" height="34" stroke="#b8966e" stroke-width="0.5" fill="none" opacity="0.3"/>
-                    <!-- Large arc (bottom-right quadrant) -->
-                    <path d="M 18 18 Q 35 18 35 35" stroke="#b8966e" stroke-width="1.5" fill="none"/>
-                    <!-- Medium arc (top-right quadrant) -->
-                    <path d="M 18 18 Q 18 1 35 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
-                    <!-- Small arc (top-left quadrant) -->
-                    <path d="M 18 18 Q 1 18 1 1" stroke="#b8966e" stroke-width="1.5" fill="none"/>
-                    <!-- Smaller arc -->
-                    <path d="M 18 18 Q 18 27 10 27" stroke="#b8966e" stroke-width="1.5" fill="none"/>
-                    <!-- Tiny arc -->
-                    <path d="M 18 18 Q 14 18 14 22" stroke="#b8966e" stroke-width="1.5" fill="none"/>
-                    <!-- Center dot -->
-                    <circle cx="18" cy="18" r="1.2" fill="#b8966e"/>
-                </svg>
+                <svg class="brand-mark" width="54" height="34" viewBox="-25.5 -40.5 92.0 58.0" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#b8966e" stroke-width="0.9" stroke-opacity="0.38"><rect x="0" y="1" width="2" height="2"/><rect x="-3" y="0" width="3" height="3"/><rect x="-3" y="-5" width="5" height="5"/><rect x="2" y="-5" width="8" height="8"/><rect x="-3" y="3" width="13" height="13"/><rect x="-24" y="-5" width="21" height="21"/><rect x="-24" y="-39" width="34" height="34"/><rect x="10" y="-39" width="55" height="55"/><rect x="-24" y="-39" width="89" height="55"/></g><path d="M0 1A1 1 0 0 1 1 0A1 1 0 0 1 2 1A2 2 0 0 1 0 3A3 3 0 0 1 -3 0A5 5 0 0 1 2 -5A8 8 0 0 1 10 3A13 13 0 0 1 -3 16A21 21 0 0 1 -24 -5A34 34 0 0 1 10 -39A55 55 0 0 1 65 16" fill="none" stroke="#b8966e" stroke-width="3" stroke-linecap="round"/></svg>
                 <span>Arquipoza</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -40,22 +25,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../">Home</a>
+                        <a class="nav-link" href="../../">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../portfolio/">Portfolio</a>
+                        <a class="nav-link" href="../../portfolio/">Proyectos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../sketchbook/">Sketchbook</a>
+                        <a class="nav-link" href="../../sketchbook/">Bocetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../about/">About</a>
+                        <a class="nav-link" href="../../about/">Estudio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../contact/">Contact</a>
+                        <a class="nav-link" href="../../contact/">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../quote/">Quote</a>
+                        <a class="nav-link" href="../../quote/">Presupuesto</a>
                     </li>
                 </ul>
             </div>
@@ -71,41 +56,41 @@
 
 <div class="container my-5">
     <a href="../../portfolio/" style="color: var(--color-secondary); font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none;">
-        ← Back to Portfolio
+        ← Volver a proyectos
     </a>
 
     <div class="row mt-4">
         <div class="col-md-8">
             
-                <img loading="lazy" decoding="async" src="../../media/oficina1.webp" alt="Office Tower Madrid" style="width: 100%; height: 500px; object-fit: cover;" />
+                <img loading="lazy" decoding="async" src="../../media/oficina1.webp" alt="Torre de Oficinas Madrid" style="width: 100%; height: 500px; object-fit: cover;" />
         </div>
         <div class="col-md-4">
             <h1 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 4px; font-weight: 300; font-size: 2.5rem; margin-bottom: 2rem;">
-                Office Tower Madrid
+                Torre de Oficinas Madrid
             </h1>
 
             <div style="border-left: 2px solid var(--color-secondary); padding-left: 1.5rem;">
-                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Client</p>
+                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Cliente</p>
                 <p style="color: var(--color-light); margin-bottom: 1.5rem;">Townhowl</p>
 
-                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Location</p>
+                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Ubicación</p>
                 <p style="color: var(--color-light); margin-bottom: 1.5rem;">Fuenlabrada, Madrid</p>
 
-                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Year</p>
+                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Año</p>
                 <p style="color: var(--color-light); margin-bottom: 1.5rem;">2025</p>
 
-                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Type</p>
-                <p style="color: var(--color-light); margin-bottom: 1.5rem;">Urban</p>
+                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Tipo</p>
+                <p style="color: var(--color-light); margin-bottom: 1.5rem;">Urbano</p>
 
-                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Surface</p>
+                <p style="color: var(--color-secondary); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.3rem;">Superficie</p>
                 <p style="color: var(--color-light); margin-bottom: 1.5rem;">990</p>
 
                 
-                    <span class="badge bg-warning">Featured</span>
+                    <span class="badge bg-warning">Destacado</span>
             </div>
 
             <a href="../../quote/" style="display: inline-block; margin-top: 2rem; background: transparent; border: 1px solid var(--color-secondary); color: var(--color-secondary); padding: 0.8rem 2rem; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; text-decoration: none;">
-                Request a Quote
+                Solicitar presupuesto
             </a>
         </div>
     </div>
@@ -113,9 +98,9 @@
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2026 Arquipoza. Architecture Studio.</p>
+            <p>© 2026 Arquipoza. Estudio de Arquitectura.</p>
         </div>
     </footer>
     <script src="../../assets/bootstrap.js"></script>
-<script src="../../assets/site.js" defer></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ae58f74f563c8a',t:'MTc5NDc0NjY2OA=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ae58f74f563c8a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script src="../../assets/site.js" defer></script></body>
 </html>
