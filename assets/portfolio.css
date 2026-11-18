@@ -90,3 +90,38 @@
 @media (prefers-reduced-motion: reduce) {
     .pf-tools *, .pf-tools *::before, .pf-tools *::after, .pf-pages *, .pf-pages *::before, .pf-empty *::before { transition: none !important; }
 }
+
+/* ===== FICHA DE PROYECTO · DESCRIPCIÓN Y GALERÍA ===== */
+.pf-detail, .pf-lightbox { --gold: var(--color-secondary); }
+
+.pf-shot { all: unset; box-sizing: border-box; display: block; width: 100%; position: relative; overflow: hidden; cursor: zoom-in; }
+.pf-shot img { display: block; transition: transform 1.2s cubic-bezier(.2,.7,.1,1), filter .8s ease; }
+.pf-shot::after { content: ""; position: absolute; inset: 12px; border: 1px solid rgba(184,150,110,0); transition: border-color .6s ease, inset .6s ease; pointer-events: none; }
+.pf-shot:hover img, .pf-shot:focus-visible img { transform: scale(1.03); }
+.pf-shot:hover::after, .pf-shot:focus-visible::after { border-color: rgba(184,150,110,.9); inset: 8px; }
+.pf-shot:focus-visible { outline: 1px solid var(--color-secondary); outline-offset: 3px; }
+
+.pf-desc { max-width: 760px; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid rgba(184,150,110,.3); }
+.pf-desc p { color: rgba(255,255,255,.7) !important; font-size: .92rem !important; line-height: 2 !important; letter-spacing: .5px; margin-bottom: 1.2rem; }
+.pf-desc h2, .pf-desc h3 { font-family: var(--font-heading); font-weight: 300; color: var(--color-light); letter-spacing: 3px; margin: 2rem 0 1rem; }
+.pf-desc a { color: var(--color-secondary); }
+
+.pf-gallery { margin-top: 4rem; }
+.pf-detail p.pf-gallery__eyebrow { color: var(--color-secondary); font-size: .72rem; letter-spacing: 5px; text-transform: uppercase; margin: 0 0 1.5rem; max-width: none; }
+.pf-gallery__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.pf-gallery__grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(.4) brightness(.85); }
+.pf-gallery__grid .pf-shot:hover img, .pf-gallery__grid .pf-shot:focus-visible img { filter: none; }
+.pf-lightbox .cp-arrow[hidden] { display: none; }
+.pf-detail .pf-lightbox p { max-width: none; }
+
+@media (max-width: 767.98px) {
+    .pf-shot--main img { height: 300px !important; }
+    .pf-gallery__grid { grid-template-columns: repeat(2, 1fr); gap: .6rem; }
+    .pf-desc { margin-top: 2.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-shot img, .pf-shot::after { transition: none !important; }
+}
+@media (max-width: 767.98px) {
+    .pf-detail .row > .col-md-4 { margin-top: 2rem; }
+}

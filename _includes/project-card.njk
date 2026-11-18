@@ -1,0 +1,32 @@
+{#- Tarjeta del grid de proyectos. Espera `p` (proyecto) y `root`. -#}
+{%- set d = p.data -%}
+<div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="{{ d.tipo | tipoEn }}" data-search="{{ d.ubicacion }} {{ d.cliente }}">
+                <a href="{{ root }}portfolio/{{ p.page.fileSlug }}/" style="text-decoration: none;">
+                    <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
+                         onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
+                         onmouseout="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1)')">
+                        {% if d.portada %}
+                            <img loading="lazy" decoding="async" src="{{ d.portada | rel(root) }}" alt="{{ d.titulo }}" style="width: 100%; height: 250px; object-fit: cover; opacity: 0.85; transition: transform 0.4s ease;" />
+                        {% endif %}
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 2px; font-weight: 300; font-size: 1.4rem; margin-bottom: 1rem;">
+                                {{ d.titulo }}
+                            </h3>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Ubicación</span> — {{ d.ubicacion }}
+                            </p>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Año</span> — {{ d.anio }}
+                            </p>
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Tipo</span> — {{ d.tipo }}
+                            </p>
+                            {% if d.superficie %}
+                            <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; letter-spacing: 1px;">
+                                <span style="color: var(--color-secondary); text-transform: uppercase;">Superficie</span> — {{ d.superficie | miles }} m²
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+            </div>

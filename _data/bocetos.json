@@ -1,0 +1,44 @@
+{
+  "bocetos": [
+    {
+      "imagen": "/media/Dibujo1.webp",
+      "titulo": "Boceto arquitectónico a mano 1"
+    },
+    {
+      "imagen": "/media/Dibujo2.webp",
+      "titulo": "Boceto arquitectónico a mano 2"
+    },
+    {
+      "imagen": "/media/Dibujo3.webp",
+      "titulo": "Boceto arquitectónico a mano 3"
+    },
+    {
+      "imagen": "/media/Dibujo4.webp",
+      "titulo": "Boceto arquitectónico a mano 4"
+    },
+    {
+      "imagen": "/media/Dibujo5.webp",
+      "titulo": "Boceto arquitectónico a mano 5"
+    },
+    {
+      "imagen": "/media/Dibujo6.webp",
+      "titulo": "Boceto arquitectónico a mano 6"
+    },
+    {
+      "imagen": "/media/Dibujo7.webp",
+      "titulo": "Boceto arquitectónico a mano 7"
+    },
+    {
+      "imagen": "/media/Dibujo8.webp",
+      "titulo": "Boceto arquitectónico a mano 8"
+    },
+    {
+      "imagen": "/media/Dibujo9.webp",
+      "titulo": "Boceto arquitectónico a mano 9"
+    },
+    {
+      "imagen": "/media/Dibujo10.webp",
+      "titulo": "Boceto arquitectónico a mano 10"
+    }
+  ]
+}

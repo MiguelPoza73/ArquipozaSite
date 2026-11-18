@@ -1,0 +1,155 @@
+# Panel de contenidos de Arquipoza (Sveltia CMS)
+# Cada cambio guardado aquí crea un commit en GitHub y la web se regenera sola en 1-2 minutos.
+
+app_title: Arquipoza · Panel
+site_url: https://miguelpoza73.github.io/ArquipozaSite/
+
+backend:
+  name: github
+  repo: MiguelPoza73/ArquipozaSite
+  branch: main
+  commit_messages:
+    create: "Panel: nuevo {{collection}} «{{slug}}»"
+    update: "Panel: actualizar {{collection}} «{{slug}}»"
+    delete: "Panel: borrar {{collection}} «{{slug}}»"
+    uploadMedia: "Panel: subir «{{path}}»"
+    deleteMedia: "Panel: borrar «{{path}}»"
+
+# Las fotos subidas se guardan en media/uploads, convertidas a WebP y reducidas a 2400 px como máximo
+media_folder: media/uploads
+public_folder: /media/uploads
+media_libraries:
+  default:
+    config:
+      max_file_size: 26214400
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2400
+          height: 2400
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: proyectos
+    label: Proyectos
+    label_singular: Proyecto
+    description: >-
+      Cada proyecto aparece en «Proyectos» con su ficha propia. Los marcados como destacados salen también en la portada (máximo 6).
+    folder: content/proyectos
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{titulo}}"
+    identifier_field: titulo
+    summary: "{{titulo}} · {{tipo}} · {{ubicacion}} ({{anio}})"
+    sortable_fields:
+      default:
+        field: orden
+        direction: ascending
+      fields: [orden, titulo, anio]
+    thumbnail: portada
+    fields:
+      - label: Título
+        name: titulo
+        widget: string
+      - label: Tipo
+        name: tipo
+        widget: select
+        options: [Residencial, Comercial, Cultural, Industrial, Urbano]
+        hint: Se usa para los filtros de la página de proyectos.
+      - label: Cliente
+        name: cliente
+        widget: string
+        required: false
+      - label: Ubicación
+        name: ubicacion
+        widget: string
+        hint: "Ejemplo: «Segovia, España». En la portada solo se muestra lo que va antes de la coma."
+      - label: Año
+        name: anio
+        widget: number
+        value_type: int
+        min: 1900
+        max: 2100
+      - label: Superficie (m²)
+        name: superficie
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+      - label: Foto de portada
+        name: portada
+        widget: image
+        hint: Foto principal del proyecto (tarjeta y ficha). Mejor en horizontal.
+      - label: Galería
+        name: galeria
+        widget: list
+        required: false
+        collapsed: true
+        label_singular: foto
+        summary: "{{fields.pie}}"
+        hint: Fotos adicionales que se ven en la ficha del proyecto. Arrástralas para cambiar el orden.
+        fields:
+          - label: Foto
+            name: imagen
+            widget: image
+          - label: Pie de foto
+            name: pie
+            widget: string
+            required: false
+          - label: Descripción para accesibilidad
+            name: alt
+            widget: string
+            required: false
+            hint: Qué se ve en la foto (para lectores de pantalla y Google). Si se deja vacío, se usa el título.
+      - label: Descripción
+        name: body
+        widget: markdown
+        required: false
+        hint: Texto opcional que aparece en la ficha, debajo de la foto principal.
+      - label: Destacado en la portada
+        name: destacado
+        widget: boolean
+        default: false
+      - label: Orden
+        name: orden
+        widget: number
+        value_type: int
+        default: 0
+        hint: Los números más bajos salen primero. Los proyectos nuevos tienen 0, así que aparecen al principio.
+      - label: Borrador (no publicar)
+        name: borrador
+        widget: boolean
+        default: false
+        hint: Actívalo para preparar un proyecto sin que se vea en la web.
+
+  - name: bocetos
+    label: Bocetos
+    description: Dibujos de la página «Bocetos». Arrástralos para cambiar el orden.
+    files:
+      - name: bocetos
+        label: Bocetos
+        file: _data/bocetos.json
+        format: json
+        fields:
+          - label: Bocetos
+            name: bocetos
+            widget: list
+            label_singular: boceto
+            summary: "{{fields.titulo}}"
+            fields:
+              - label: Dibujo
+                name: imagen
+                widget: image
+              - label: Título o descripción
+                name: titulo
+                widget: string
+                required: false
+                hint: Qué representa el dibujo (para accesibilidad). Si se deja vacío, se numera automáticamente.

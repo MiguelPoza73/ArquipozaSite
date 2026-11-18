@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections.redirecciones
+  size: 1
+  alias: r
+permalink: "portfolio/{{ r.id }}/"
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Arquipoza</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="{{ r.destino }}" />
+    <meta http-equiv="refresh" content="0; url={{ r.destino }}" />
+    <script>location.replace('{{ r.destino }}' + location.search + location.hash);</script>
+</head>
+<body style="background:#0f0f0f">
+    <a href="{{ r.destino }}" style="color:#b8966e">Este proyecto se ha movido</a>
+</body>
+</html>

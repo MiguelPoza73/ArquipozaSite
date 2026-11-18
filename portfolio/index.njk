@@ -1,0 +1,172 @@
+---
+root: "../"
+---
+<!DOCTYPE html>
+<html lang="es" style="height: auto;">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arquipoza - Estudio de Arquitectura</title>
+    <link rel="stylesheet" href="../assets/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/arquipoza.css" />
+    <link rel="stylesheet" href="../assets/current-project.css" />
+    <link rel="stylesheet" href="../assets/portfolio.css" />
+    <style>
+        article.content-item.page header h1 { display: none; }
+        html { height: auto !important; }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-30 -62.0 101 101'%3E%3Crect x='-30' y='-62.0' width='101' height='101' fill='%230f0f0f'/%3E%3Cg fill='none' stroke='%23b8966e' stroke-width='1.4' stroke-opacity='0.45'%3E%3Crect x='0' y='1' width='2' height='2'/%3E%3Crect x='-3' y='0' width='3' height='3'/%3E%3Crect x='-3' y='-5' width='5' height='5'/%3E%3Crect x='2' y='-5' width='8' height='8'/%3E%3Crect x='-3' y='3' width='13' height='13'/%3E%3Crect x='-24' y='-5' width='21' height='21'/%3E%3Crect x='-24' y='-39' width='34' height='34'/%3E%3Crect x='10' y='-39' width='55' height='55'/%3E%3Crect x='-24' y='-39' width='89' height='55'/%3E%3C/g%3E%3Cpath d='M0 1A1 1 0 0 1 1 0A1 1 0 0 1 2 1A2 2 0 0 1 0 3A3 3 0 0 1 -3 0A5 5 0 0 1 2 -5A8 8 0 0 1 10 3A13 13 0 0 1 -3 16A21 21 0 0 1 -24 -5A34 34 0 0 1 10 -39A55 55 0 0 1 65 16' fill='none' stroke='%23b8966e' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../" style="display:flex; align-items:center; gap:0.8rem; text-decoration:none;">
+                <svg class="brand-mark" width="54" height="34" viewBox="-25.5 -40.5 92.0 58.0" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#b8966e" stroke-width="0.9" stroke-opacity="0.38"><rect x="0" y="1" width="2" height="2"/><rect x="-3" y="0" width="3" height="3"/><rect x="-3" y="-5" width="5" height="5"/><rect x="2" y="-5" width="8" height="8"/><rect x="-3" y="3" width="13" height="13"/><rect x="-24" y="-5" width="21" height="21"/><rect x="-24" y="-39" width="34" height="34"/><rect x="10" y="-39" width="55" height="55"/><rect x="-24" y="-39" width="89" height="55"/></g><path d="M0 1A1 1 0 0 1 1 0A1 1 0 0 1 2 1A2 2 0 0 1 0 3A3 3 0 0 1 -3 0A5 5 0 0 1 2 -5A8 8 0 0 1 10 3A13 13 0 0 1 -3 16A21 21 0 0 1 -24 -5A34 34 0 0 1 10 -39A55 55 0 0 1 65 16" fill="none" stroke="#b8966e" stroke-width="3" stroke-linecap="round"/></svg>
+                <span>Arquipoza</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../portfolio/">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../sketchbook/">Bocetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/">Estudio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../quote/">Presupuesto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        
+        <div class="container my-5">
+    <h1 style="font-family: var(--font-heading); color: var(--color-light); letter-spacing: 4px; font-weight: 300; text-transform: uppercase; border-bottom: 1px solid var(--color-secondary); padding-bottom: 1rem;">
+        Nuestros proyectos
+    </h1>
+    <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 2px; margin-top: 1rem;">
+        Una selección de nuestros proyectos de arquitectura más significativos.
+    </p>
+
+    <div class="pf-tools" role="search">
+        <div class="pf-count" id="projectCount" aria-live="polite">{{ collections.proyectos.length }} {{ "proyecto" if collections.proyectos.length == 1 else "proyectos" }}</div>
+        <form id="searchForm" class="pf-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+            <label for="search" class="pf-sr">Buscar proyectos</label>
+            <input id="search" type="search" placeholder="Buscar por nombre, ubicación o cliente" autocomplete="off" enterkeyhint="search" />
+            <button type="button" class="pf-clear" aria-label="Borrar búsqueda" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </form>
+        <div class="pf-filters" role="group" aria-label="Filtrar por tipo de proyecto">
+            <button type="button" class="filter" data-filter="" aria-pressed="true">Todos<sup>{{ collections.proyectos.length }}</sup></button>
+            {%- for t in tipos %}{% set n = collections.proyectos | contarTipo(t.es) %}{% if n %}
+            <button type="button" class="filter" data-filter="{{ t.en }}" aria-pressed="false">{{ t.es }}<sup>{{ n }}</sup></button>
+            {%- endif %}{% endfor %}
+        </div>
+    </div>
+
+<div class="row" id="projectGrid">
+            {%- for p in collections.proyectos %}
+            {% include "project-card.njk" %}
+            {%- endfor %}
+</div>
+    <div class="pf-empty" id="pfEmpty" hidden>
+        <p class="pf-empty__title">Ningún proyecto coincide con la búsqueda</p>
+        <button type="button" class="pf-reset">Ver todos los proyectos</button>
+    </div>
+    <nav class="pf-pages" id="pagination" aria-label="Páginas de proyectos"></nav>    <!-- Live Project Section -->
+    <section class="cp" aria-labelledby="cp-title">
+        <div class="cp-head">
+            <div class="reveal">
+                <p class="eyebrow">Actualmente en obra</p>
+                <h2 id="cp-title">Proyecto en curso</h2>
+                <p class="cp-loc">Rehabilitación de casa tradicional de piedra — Castilla y León, España</p>
+            </div>
+            <div class="cp-panel reveal" style="--d:.15s; --pct:95%">
+                <dl>
+                    <div><dt>Estado</dt><dd class="live">En obra</dd></div>
+                    <div><dt>Fase</dt><dd>Fase 7 de 7</dd></div>
+                    <div><dt>Progreso</dt><dd>95%</dd></div>
+                </dl>
+                <div class="cp-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso global"><i></i></div>
+            </div>
+        </div>
+
+        <div class="cp-viewer reveal" style="--d:.25s" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Fases de obra — pulsa Intro para ampliar">
+            <figure class="cp-slide is-active" data-phase="Fase 1" data-desc="Estado inicial y demolición">
+                <img src="../media/obra1.webp" alt="Fase 1 — Estado inicial y demolición" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">01</span><div><small>Fase 1</small><span>Estado inicial y demolición</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 2" data-desc="Estructura exterior con maquinaria">
+                <img src="../media/obra2.webp" alt="Fase 2 — Estructura exterior con maquinaria" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">02</span><div><small>Fase 2</small><span>Estructura exterior con maquinaria</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 3" data-desc="Estructura metálica y cubierta">
+                <img src="../media/obra3.webp" alt="Fase 3 — Estructura metálica y cubierta" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">03</span><div><small>Fase 3</small><span>Estructura metálica y cubierta</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 4" data-desc="Detalle de cubierta interior de madera">
+                <img src="../media/obra4.webp" alt="Fase 4 — Detalle de cubierta interior de madera" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">04</span><div><small>Fase 4</small><span>Detalle de cubierta interior de madera</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 5" data-desc="Trabajos de cerramiento">
+                <img src="../media/obra5.webp" alt="Fase 5 — Trabajos de cerramiento" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">05</span><div><small>Fase 5</small><span>Trabajos de cerramiento</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 6" data-desc="Fase exterior avanzada">
+                <img src="../media/obra6.webp" alt="Fase 6 — Fase exterior avanzada" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">06</span><div><small>Fase 6</small><span>Fase exterior avanzada</span></div></figcaption>
+            </figure>
+            <figure class="cp-slide" data-phase="Fase 7" data-desc="Resultado casi final">
+                <img src="../media/obra7.webp" alt="Fase 7 — Resultado casi final" loading="lazy" decoding="async">
+                <figcaption><span class="cp-num" aria-hidden="true">07</span><div><small>Fase 7</small><span>Resultado casi final</span></div></figcaption>
+            </figure>
+            <div class="cp-counter" aria-live="polite"><b>01</b> / 07</div>
+            <button type="button" class="cp-arrow prev" aria-label="Fase anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <button type="button" class="cp-arrow next" aria-label="Fase siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+
+        <div class="cp-timeline reveal" style="--d:.35s">
+            <span class="cp-line" aria-hidden="true"></span>
+            <ol class="cp-phases">
+            <li><button type="button" class="cp-phase" aria-current="step" aria-label="Fase 1: Estado inicial y demolición"><span class="thumb"><img src="../media/obra1.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 1</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 2: Estructura exterior con maquinaria"><span class="thumb"><img src="../media/obra2.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 2</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 3: Estructura metálica y cubierta"><span class="thumb"><img src="../media/obra3.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 3</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 4: Detalle de cubierta interior de madera"><span class="thumb"><img src="../media/obra4.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 4</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 5: Trabajos de cerramiento"><span class="thumb"><img src="../media/obra5.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 5</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 6: Fase exterior avanzada"><span class="thumb"><img src="../media/obra6.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 6</span></button></li>
+            <li><button type="button" class="cp-phase" aria-label="Fase 7: Resultado casi final"><span class="thumb"><img src="../media/obra7.webp" alt="" loading="lazy" decoding="async"></span><span class="label">Fase 7</span></button></li>
+            </ol>
+        </div>
+
+        <div id="lightbox" class="cp-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
+            <button type="button" class="close">CERRAR ✕</button>
+            <button type="button" class="cp-arrow prev" aria-label="Fase anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <img src="" alt="">
+            <p></p>
+            <button type="button" class="cp-arrow next" aria-label="Fase siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2026 Arquipoza. Estudio de Arquitectura.</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap.js"></script>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/current-project.js" defer></script>
+</body>
+</html>
