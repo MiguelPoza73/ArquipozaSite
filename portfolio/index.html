@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/bootstrap.css" />
     <link rel="stylesheet" href="../assets/arquipoza.css" />
     <link rel="stylesheet" href="../assets/current-project.css" />
+    <link rel="stylesheet" href="../assets/portfolio.css" />
     <style>
         article.content-item.page header h1 { display: none; }
         html { height: auto !important; }
@@ -55,10 +56,27 @@
     </h1>
     <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 2px; margin-top: 1rem;">
         Una selección de nuestros proyectos de arquitectura más significativos.
-        <span id="projectCount">13</span> proyecto(s) encontrado(s).
     </p>
 
-<div class="row mt-4 mb-5"><div class="col-md-6"><form id="searchForm"><div style="display:flex"><input id="search" class="form-control" placeholder="Buscar por ubicación o cliente..." style="background:#1a1a1a;color:white;border-radius:0"><button class="btn" style="background:#b8966e;border-radius:0">Buscar</button></div></form></div><div class="col-md-6" style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:flex-end"><button class="filter btn" data-filter="" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Todos</button><button class="filter btn" data-filter="Residential" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Residencial</button><button class="filter btn" data-filter="Commercial" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Comercial</button><button class="filter btn" data-filter="Cultural" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Cultural</button><button class="filter btn" data-filter="Industrial" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Industrial</button><button class="filter btn" data-filter="Urban" style="color:#b8966e;border:1px solid #b8966e;font-size:.7rem;border-radius:0">Urbano</button></div></div><div class="row" id="projectGrid"><div class="col-md-4 mb-5 project-card" data-type="Residential" data-search="Madrid Familia García">
+    <div class="pf-tools" role="search">
+        <div class="pf-count" id="projectCount" aria-live="polite">13 proyectos</div>
+        <form id="searchForm" class="pf-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+            <label for="search" class="pf-sr">Buscar proyectos</label>
+            <input id="search" type="search" placeholder="Buscar por nombre, ubicación o cliente" autocomplete="off" enterkeyhint="search" />
+            <button type="button" class="pf-clear" aria-label="Borrar búsqueda" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </form>
+        <div class="pf-filters" role="group" aria-label="Filtrar por tipo de proyecto">
+            <button type="button" class="filter" data-filter="" aria-pressed="true">Todos<sup></sup></button>
+            <button type="button" class="filter" data-filter="Residential" aria-pressed="false">Residencial<sup></sup></button>
+            <button type="button" class="filter" data-filter="Commercial" aria-pressed="false">Comercial<sup></sup></button>
+            <button type="button" class="filter" data-filter="Cultural" aria-pressed="false">Cultural<sup></sup></button>
+            <button type="button" class="filter" data-filter="Industrial" aria-pressed="false">Industrial<sup></sup></button>
+            <button type="button" class="filter" data-filter="Urban" aria-pressed="false">Urbano<sup></sup></button>
+        </div>
+    </div>
+
+<div class="row" id="projectGrid"><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Residential" data-search="Madrid Familia García">
                 <a href="../portfolio/4ws5wj8ynsn9rw5bsxwqxf0zx7/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -85,7 +103,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Cultural" data-search="Peñalsordo, Badajoz Eduardo">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Cultural" data-search="Peñalsordo, Badajoz Eduardo">
                 <a href="../portfolio/4epgrfbme26dcv77sfr3amcxmc/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -113,7 +131,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Urban" data-search="Fuenlabrada, Madrid Townhowl">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Urban" data-search="Fuenlabrada, Madrid Townhowl">
                 <a href="../portfolio/48g8bm4jm3wxt7zagv66s71z5m/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -141,7 +159,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Residential" data-search="Segovia, España Real State Luxury Agency">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Residential" data-search="Segovia, España Real State Luxury Agency">
                 <a href="../portfolio/49852b12d4bxp0btqahkd3nn53/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -168,7 +186,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Residential" data-search="Países Bajos Andres Molina">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Residential" data-search="Países Bajos Andres Molina">
                 <a href="../portfolio/4khxj7fbsmw3v713qf8mjn8vdv/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -195,7 +213,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Commercial" data-search="Barcelona, España Real State Luxury Agency">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Commercial" data-search="Barcelona, España Real State Luxury Agency">
                 <a href="../portfolio/41avjckgz5x8250d14dqy78e4j/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -222,7 +240,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Cultural" data-search="Noruega Rubius">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Cultural" data-search="Noruega Rubius">
                 <a href="../portfolio/4d9hxenb2c9pxra6hvs52yygx4/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -249,7 +267,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Industrial" data-search="Toledo, España Dragagos S.A.">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Industrial" data-search="Toledo, España Dragagos S.A.">
                 <a href="../portfolio/4ss8rnd0rnyzg2094baydy5y44/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -276,7 +294,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Industrial" data-search="Huesca, España Repsol">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Industrial" data-search="Huesca, España Repsol">
                 <a href="../portfolio/45af2dvggf8m63yqtbwg8kzgxx/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -303,7 +321,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Commercial" data-search="Inglaterra Familia Scott">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Commercial" data-search="Inglaterra Familia Scott">
                 <a href="../portfolio/4a7e5eq4qjtbb7beq8g9693amj/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -330,7 +348,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Urban" data-search="Getafe, Madrid Residential4You">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Urban" data-search="Getafe, Madrid Residential4You">
                 <a href="../portfolio/4c68k8js6bxa5327s8qpw7jvwv/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -358,7 +376,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Residential" data-search="Budapest Szabo">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Residential" data-search="Budapest Szabo">
                 <a href="../portfolio/42v52ed51h9fctvggefb7p8zmy/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -386,7 +404,7 @@
                         </div>
                     </div>
                 </a>
-            </div><div class="col-md-4 mb-5 project-card" data-type="Residential" data-search="Budapest example">
+            </div><div class="col-sm-6 col-lg-4 mb-5 project-card" data-type="Residential" data-search="Budapest example">
                 <a href="../portfolio/4arjpdterezyr5kgqa1vprhyc0/" style="text-decoration: none;">
                     <div style="background: #1a1a1a; overflow: hidden; transition: transform 0.3s ease;"
                          onmouseover="this.querySelector('img') && (this.querySelector('img').style.transform='scale(1.05)')"
@@ -413,7 +431,12 @@
                         </div>
                     </div>
                 </a>
-            </div></div><div id="pagination" style="display:flex;justify-content:center;gap:.5rem"></div>    <!-- Live Project Section -->
+            </div></div>
+    <div class="pf-empty" id="pfEmpty" hidden>
+        <p class="pf-empty__title">Ningún proyecto coincide con la búsqueda</p>
+        <button type="button" class="pf-reset">Ver todos los proyectos</button>
+    </div>
+    <nav class="pf-pages" id="pagination" aria-label="Páginas de proyectos"></nav>    <!-- Live Project Section -->
     <section class="cp" aria-labelledby="cp-title">
         <div class="cp-head">
             <div class="reveal">

@@ -1,0 +1,92 @@
+/* ===== PORTFOLIO · BUSCADOR Y FILTROS ===== */
+
+.pf-tools {
+    --gold: var(--color-secondary);
+    --muted: rgba(255,255,255,.55);
+    --faint: rgba(255,255,255,.12);
+    --ease: cubic-bezier(.7,0,.2,1);
+    display: grid;
+    grid-template-columns: minmax(260px, 380px) 1fr;
+    grid-template-areas: "count count" "search filters";
+    gap: 1.2rem 3rem;
+    align-items: end;
+    margin: 3rem 0 3.5rem;
+}
+
+.pf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* contador: mismo estilo "eyebrow" que el resto de la web */
+.pf-count { grid-area: count; color: var(--gold); font-size: .72rem; letter-spacing: 5px; text-transform: uppercase; }
+
+/* buscador: línea fina que se dibuja en dorado al enfocar */
+.pf-search { grid-area: search; position: relative; display: flex; align-items: center; gap: .9rem; margin: 0; border-bottom: 1px solid rgba(184,150,110,.35); }
+.pf-search::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.pf-search:focus-within::after { transform: scaleX(1); }
+.pf-search > svg { flex: none; width: 17px; height: 17px; color: var(--gold); }
+.pf-search input { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; border-radius: 0; color: var(--color-light); font: 300 .85rem/1.4 var(--font-body); letter-spacing: 1.5px; padding: .95rem 0; -webkit-appearance: none; appearance: none; }
+.pf-search input::placeholder { color: rgba(255,255,255,.4); }
+.pf-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.pf-clear { flex: none; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; background: transparent; border: 0; color: var(--muted); cursor: pointer; transition: color .3s ease, transform .4s var(--ease); }
+.pf-clear svg { width: 16px; height: 16px; }
+.pf-clear:hover, .pf-clear:focus-visible { color: var(--gold); transform: rotate(90deg); }
+.pf-clear[hidden] { display: none; }
+
+/* clasificadores: texto en mayúsculas con subrayado dorado, como las fases de obra */
+.pf-filters { grid-area: filters; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 2rem; }
+.pf-filters .filter { all: unset; box-sizing: border-box; position: relative; cursor: pointer; white-space: nowrap; padding: 1rem 0 .8rem; font-size: .68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); transition: color .4s ease, opacity .4s ease; }
+.pf-filters .filter sup { position: relative; top: -.7em; margin-left: .35rem; font-family: var(--font-heading); font-size: .85rem; letter-spacing: 0; color: rgba(184,150,110,.65); vertical-align: baseline; }
+.pf-filters .filter::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: right; transition: transform .5s var(--ease); }
+.pf-filters .filter:hover { color: var(--color-light); }
+.pf-filters .filter[aria-pressed="true"] { color: var(--gold); }
+.pf-filters .filter[aria-pressed="true"]::after { transform: scaleX(1); transform-origin: left; }
+.pf-filters .filter[data-empty]:not([aria-pressed="true"]) { opacity: .35; }
+.pf-filters .filter:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+
+/* sin resultados */
+.pf-empty { margin: 0 0 3rem; padding: 4rem 1.5rem; text-align: center; border: 1px solid rgba(184,150,110,.25); }
+.pf-empty[hidden] { display: none; }
+.pf-empty p.pf-empty__title { max-width: none; margin: 0 auto 2rem; font-family: var(--font-heading); font-size: 1.7rem; font-weight: 300; letter-spacing: 2px; line-height: 1.3; color: var(--color-light); }
+
+/* botones con barrido dorado (mismo gesto que flechas y CTA del sitio) */
+.pf-reset, .pf-page { position: relative; overflow: hidden; isolation: isolate; background: transparent; border: 1px solid rgba(184,150,110,.6); color: var(--color-secondary); cursor: pointer; transition: color .45s ease, border-color .45s ease; }
+.pf-reset::before, .pf-page::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--color-secondary); transform: scaleX(0); transform-origin: right; transition: transform .45s cubic-bezier(.7,0,.2,1); }
+.pf-reset:hover, .pf-reset:focus-visible, .pf-page:hover, .pf-page:focus-visible, .pf-page[aria-current="page"] { color: var(--color-primary); border-color: var(--color-secondary); }
+.pf-reset:hover::before, .pf-reset:focus-visible::before, .pf-page:hover::before, .pf-page:focus-visible::before, .pf-page[aria-current="page"]::before { transform: scaleX(1); transform-origin: left; }
+.pf-reset:focus-visible, .pf-page:focus-visible { outline: 1px solid var(--color-secondary); outline-offset: 3px; }
+.pf-reset { padding: .85rem 2.6rem; font-size: .72rem; letter-spacing: 3px; text-transform: uppercase; }
+
+/* paginación */
+.pf-pages { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; margin-top: .5rem; }
+.pf-pages:empty { display: none; }
+.pf-page { width: 46px; height: 46px; padding: 0; font-family: var(--font-heading); font-size: 1.15rem; line-height: 1; }
+.pf-page[aria-current="page"] { cursor: default; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    .pf-tools { grid-template-columns: 1fr; grid-template-areas: "count" "search" "filters"; gap: 1rem; }
+    /* los filtros pasan a una tira deslizable en una sola línea */
+    .pf-filters {
+        justify-content: flex-start; flex-wrap: nowrap; gap: 0 1.8rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none;
+        border-bottom: 1px solid var(--faint);
+        -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2.5rem), transparent);
+                mask-image: linear-gradient(90deg, #000 calc(100% - 2.5rem), transparent);
+    }
+    .pf-filters::-webkit-scrollbar { display: none; }
+    .pf-filters .filter { scroll-snap-align: start; }
+    .pf-filters .filter:last-child { margin-right: 2rem; }
+}
+
+@media (max-width: 767.98px) {
+    .pf-tools { margin: 2rem 0 2.5rem; }
+    .pf-filters { gap: 0 1.5rem; }
+    .pf-filters .filter { padding: 1.1rem 0 .9rem; }
+    .pf-empty { padding: 3rem 1.2rem; }
+    .pf-empty p.pf-empty__title { font-size: 1.4rem; }
+}
+
+/* sin animaciones en la primera pintura (p. ej. al llegar con ?type= en la URL) */
+.pf-tools:not(.is-ready) *, .pf-tools:not(.is-ready) *::before, .pf-tools:not(.is-ready) *::after { transition: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+    .pf-tools *, .pf-tools *::before, .pf-tools *::after, .pf-pages *, .pf-pages *::before, .pf-empty *::before { transition: none !important; }
+}
